@@ -3,10 +3,6 @@ buildscript {
         google()
         jcenter()
     }
-    dependencies {
-        classpath(GradleDependencies.androidPlugin)
-        classpath(KotlinDependencies.gradlePlugin)
-    }
 }
 
 allprojects {

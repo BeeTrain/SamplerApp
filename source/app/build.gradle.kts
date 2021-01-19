@@ -1,5 +1,9 @@
 import extensions.getGitVersionCode
 import extensions.getGitVersionName
+import extensions.isGradleProjectDir
+
+val baseModulesDirectory = "${project.rootDir}/source/base"
+val featureModulesDirectory = "${project.rootDir}/source/feature"
 
 plugins {
     id(BuildPlugins.androidApplication)
@@ -19,8 +23,12 @@ android {
     }
 
     buildTypes {
-        getByName(BuildTypes.release) {
+        getByName(BuildTypes.debug) {
             isMinifyEnabled = false
+        }
+
+        getByName(BuildTypes.release) {
+            isMinifyEnabled = true
         }
     }
 
@@ -39,9 +47,20 @@ android {
 }
 
 dependencies {
+    // Modules
+    file(baseModulesDirectory).listFiles()?.forEach { baseModule ->
+        if (baseModule.isDirectory && baseModule.isGradleProjectDir) {
+            implementation(project(":${baseModule.name}"))
+        }
+    }
+    file(featureModulesDirectory).listFiles()?.forEach { featureModule ->
+        if (featureModule.isDirectory && featureModule.isGradleProjectDir) {
+            implementation(project(":${featureModule.name}"))
+        }
+    }
+
+    // Libraries
     implementation(KotlinDependencies.stdLib)
-    implementation(AndroidXDependencies.coreKtx)
-    implementation(AndroidXDependencies.appCompat)
-    implementation(AndroidXDependencies.material)
-    implementation(AndroidXDependencies.constraintLayout)
+    AndroidXDependencies.all(this)
+    MiscDependencies.all(this)
 }

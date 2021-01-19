@@ -5,6 +5,7 @@
     package="ru.chernakov.sampler">
 
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,7 +14,10 @@
         android:theme="@style/Theme.SamplerApp"
         tools:ignore="AllowBackup">
 
-        <activity android:name="ru.chernakov.sampler.MainActivity">
+        <activity
+            android:name="ru.chernakov.sampler.presentation.application.ApplicationActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="TextView">
+        <attr name="textType" format="enum">
+            <enum name="None" value="0"/>
+            <enum name="Headline1" value="1"/>
+            <enum name="Headline2" value="2"/>
+            <enum name="Headline3" value="3"/>
+            <enum name="Headline4" value="4"/>
+            <enum name="Headline5" value="5"/>
+            <enum name="Headline6" value="6"/>
+            <enum name="Subtitle1" value="7"/>
+            <enum name="Subtitle2" value="8"/>
+            <enum name="Body1" value="9"/>
+            <enum name="Body2" value="10"/>
+            <enum name="Button" value="11"/>
+            <enum name="Caption" value="12"/>
+            <enum name="Overline" value="13"/>
+        </attr>
+    </declare-styleable>
+
+</resources>

@@ -6,6 +6,13 @@ object ApplicationConfig {
     const val targetSdkVersion = 30
 
     const val buildToolsVersion = "30.0.2"
+
+    enum class Modules(val path: String) {
+        APP(":app"),
+
+        CORE(":core"),
+        CORE_UI(":core_ui")
+    }
 }
 
 object BuildTypes {

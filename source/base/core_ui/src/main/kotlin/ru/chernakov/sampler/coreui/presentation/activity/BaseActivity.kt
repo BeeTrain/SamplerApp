@@ -1,4 +1,4 @@
-package ru.chernakov.sampler.core.presentation.base
+package ru.chernakov.sampler.coreui.presentation.activity
 
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity

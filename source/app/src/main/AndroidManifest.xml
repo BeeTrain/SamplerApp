@@ -5,7 +5,7 @@
     package="ru.chernakov.sampler">
 
     <application
-        android:name=".App"
+        android:name=".SamplerApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"

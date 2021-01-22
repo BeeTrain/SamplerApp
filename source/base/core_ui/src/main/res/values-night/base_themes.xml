@@ -1,0 +1,33 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="ParentTheme" parent="Base.Theme">
+
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+
+        <item name="colorBackground">@color/black</item>
+        <item name="android:colorBackground">?colorBackground</item>
+        <item name="colorSurface">@color/grey_900</item>
+        <item name="colorError">@color/red_200</item>
+
+        <item name="colorOnBackground">@color/white</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorOnError">@color/black</item>
+
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">false</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">false</item>
+
+        <item name="styleAppearanceHeadline1">@style/TextAppearance.BaseTheme.Headline1</item>
+        <item name="styleAppearanceHeadline2">@style/TextAppearance.BaseTheme.Headline2</item>
+        <item name="styleAppearanceHeadline3">@style/TextAppearance.BaseTheme.Headline3</item>
+        <item name="styleAppearanceHeadline4">@style/TextAppearance.BaseTheme.Headline4</item>
+        <item name="styleAppearanceHeadline5">@style/TextAppearance.BaseTheme.Headline5</item>
+        <item name="styleAppearanceHeadline6">@style/TextAppearance.BaseTheme.Headline6</item>
+    </style>
+</resources>

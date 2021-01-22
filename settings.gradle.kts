@@ -1,3 +1,6 @@
+/* Project Settings */
+
+// Attach project modules
 rootDir
     .walk()
     .maxDepth(5)
@@ -13,3 +16,10 @@ rootDir
         include(moduleName)
         project(moduleName).projectDir = file(it.path)
     }
+
+// Lock dynamic dependency versions
+buildscript {
+    configurations.classpath {
+        resolutionStrategy.activateDependencyLocking()
+    }
+}

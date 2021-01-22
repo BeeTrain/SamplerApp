@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- (Chips, buttons, text fields and FABs) -->
+    <style name="ShapeAppearance.BaseTheme.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent" />
+
+    <!-- (Cards, Alert dialogs...) -->
+    <style name="ShapeAppearance.BaseTheme.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent" />
+
+    <!-- (Bottom navigation drawers etc.) -->
+    <style name="ShapeAppearance.BaseTheme.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent" />
+
+</resources>

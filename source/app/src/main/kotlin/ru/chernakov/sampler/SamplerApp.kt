@@ -1,10 +1,10 @@
 package ru.chernakov.sampler
 
 import android.app.Application
-import ru.chernakov.sampler.core.util.lifecycle.Lifecycler
+import ru.chernakov.sampler.coreui.util.lifecycle.LifecycleCallback
 import timber.log.Timber
 
-class App : Application() {
+class SamplerApp : Application() {
 
     override fun onCreate() {
         super.onCreate()
@@ -12,6 +12,6 @@ class App : Application() {
         if (BuildConfig.DEBUG) {
             Timber.plant(Timber.DebugTree())
         }
-        Lifecycler.register(this)
+        LifecycleCallback.register(this)
     }
 }

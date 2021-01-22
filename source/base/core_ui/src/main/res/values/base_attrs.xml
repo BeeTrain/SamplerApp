@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="colorBackground" format="color" />
+    <attr name="colorPrimary" format="color" />
+
+    <attr name="colorOnPrimary" format="color" />
+
+    <attr name="colorNegative" format="reference|color" />
+    <attr name="colorPositive" format="reference|color" />
+
+    <attr name="styleAppearanceHeadline1" format="reference" />
+    <attr name="styleAppearanceHeadline2" format="reference" />
+    <attr name="styleAppearanceHeadline3" format="reference" />
+    <attr name="styleAppearanceHeadline4" format="reference" />
+    <attr name="styleAppearanceHeadline5" format="reference" />
+    <attr name="styleAppearanceHeadline6" format="reference" />
+
+    <attr name="styleAppearanceSubtitle1" format="reference" />
+    <attr name="styleAppearanceSubtitle2" format="reference" />
+
+    <attr name="styleAppearanceBody1" format="reference" />
+    <attr name="styleAppearanceBody2" format="reference" />
+
+    <attr name="styleAppearanceButton" format="reference" />
+    <attr name="styleAppearanceCaption" format="reference" />
+    <attr name="styleAppearanceOverline" format="reference" />
+
+    <attr name="styleToolbar" format="reference" />
+
+</resources>

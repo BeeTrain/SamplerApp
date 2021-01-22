@@ -1,10 +1,10 @@
-package ru.chernakov.sampler.core.util.lifecycle
+package ru.chernakov.sampler.coreui.util.lifecycle
 
 import android.app.Activity
 import android.app.Application
 import android.os.Bundle
 
-open class Lifecycler : Application.ActivityLifecycleCallbacks {
+open class LifecycleCallback : Application.ActivityLifecycleCallbacks {
 
     override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) {
         // Do nothing.
@@ -40,7 +40,7 @@ open class Lifecycler : Application.ActivityLifecycleCallbacks {
 
         @JvmStatic
         fun register(app: Application) {
-            app.registerActivityLifecycleCallbacks(Lifecycler())
+            app.registerActivityLifecycleCallbacks(LifecycleCallback())
         }
 
         val isApplicationVisible: Boolean

@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Headlines -->
+    <style name="TextAppearance.BaseTheme.Headline1" parent="TextAppearance.MaterialComponents.Headline1" />
+
+    <style name="TextAppearance.BaseTheme.Headline2" parent="TextAppearance.MaterialComponents.Headline2" />
+
+    <style name="TextAppearance.BaseTheme.Headline3" parent="TextAppearance.MaterialComponents.Headline3" />
+
+    <style name="TextAppearance.BaseTheme.Headline4" parent="TextAppearance.MaterialComponents.Headline4" />
+
+    <style name="TextAppearance.BaseTheme.Headline5" parent="TextAppearance.MaterialComponents.Headline5" />
+
+    <style name="TextAppearance.BaseTheme.Headline6" parent="TextAppearance.MaterialComponents.Headline6" />
+
+    <!-- Subtitles -->
+    <style name="TextAppearance.BaseTheme.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1" />
+
+    <style name="TextAppearance.BaseTheme.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2" />
+
+    <!-- Bodies -->
+    <style name="TextAppearance.BaseTheme.Body1" parent="TextAppearance.MaterialComponents.Body1" />
+
+    <style name="TextAppearance.BaseTheme.Body2" parent="TextAppearance.MaterialComponents.Body2" />
+
+    <!-- Components -->
+    <style name="TextAppearance.BaseTheme.Button" parent="TextAppearance.MaterialComponents.Button" />
+
+    <style name="TextAppearance.BaseTheme.Caption" parent="TextAppearance.MaterialComponents.Caption" />
+
+    <style name="TextAppearance.BaseTheme.Overline" parent="TextAppearance.MaterialComponents.Overline" />
+
+</resources>

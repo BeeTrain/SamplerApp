@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="ParentTheme" parent="Base.Theme">
+    </style>
+
+    <style name="Base.Theme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/purple_500</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorSecondary">@color/green_200</item>
+        <item name="colorSecondaryVariant">@color/green_500</item>
+
+        <item name="colorBackground">@color/white</item>
+        <item name="android:colorBackground">?colorBackground</item>
+        <item name="colorSurface">@color/white</item>
+
+        <!-- Text, icons, dividers -->
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnBackground">@color/black</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="colorOnError">@color/white</item>
+
+        <item name="colorNegative">@color/red_600</item>
+        <item name="colorError">?attr/colorNegative</item>
+        <item name="colorPositive">@color/green_600</item>
+
+        <item name="android:statusBarColor" tools:ignore="NewApi">?attr/colorSurface</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>
+        <item name="android:navigationBarColor" tools:ignore="NewApi">?android:attr/colorBackground</item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">true</item>
+        <item name="android:navigationBarDividerColor" tools:ignore="NewApi">?attr/colorControlHighlight</item>
+
+        <!-- Types -->
+        <item name="styleAppearanceHeadline1">@style/TextAppearance.BaseTheme.Headline1</item>
+        <item name="styleAppearanceHeadline2">@style/TextAppearance.BaseTheme.Headline2</item>
+        <item name="styleAppearanceHeadline3">@style/TextAppearance.BaseTheme.Headline3</item>
+        <item name="styleAppearanceHeadline4">@style/TextAppearance.BaseTheme.Headline4</item>
+        <item name="styleAppearanceHeadline5">@style/TextAppearance.BaseTheme.Headline5</item>
+        <item name="styleAppearanceHeadline6">@style/TextAppearance.BaseTheme.Headline6</item>
+
+        <item name="textAppearanceHeadline1">?attr/styleAppearanceHeadline1</item>
+        <item name="textAppearanceHeadline2">?attr/styleAppearanceHeadline2</item>
+        <item name="textAppearanceHeadline3">?attr/styleAppearanceHeadline3</item>
+        <item name="textAppearanceHeadline4">?attr/styleAppearanceHeadline4</item>
+        <item name="textAppearanceHeadline5">?attr/styleAppearanceHeadline5</item>
+        <item name="textAppearanceHeadline6">?attr/styleAppearanceHeadline6</item>
+
+        <item name="styleAppearanceSubtitle1">@style/TextAppearance.BaseTheme.Subtitle1</item>
+        <item name="styleAppearanceSubtitle2">@style/TextAppearance.BaseTheme.Subtitle2</item>
+
+        <item name="textAppearanceSubtitle1">?attr/styleAppearanceSubtitle1</item>
+        <item name="textAppearanceSubtitle2">?attr/styleAppearanceSubtitle2</item>
+
+        <item name="styleAppearanceBody1">@style/TextAppearance.BaseTheme.Body1</item>
+        <item name="styleAppearanceBody2">@style/TextAppearance.BaseTheme.Body2</item>
+
+        <item name="textAppearanceBody1">?attr/styleAppearanceBody1</item>
+        <item name="textAppearanceBody2">?attr/styleAppearanceBody1</item>
+
+        <item name="styleAppearanceButton">@style/TextAppearance.BaseTheme.Button</item>
+        <item name="styleAppearanceCaption">@style/TextAppearance.BaseTheme.Caption</item>
+        <item name="styleAppearanceOverline">@style/TextAppearance.BaseTheme.Overline</item>
+
+        <item name="textAppearanceButton">?attr/styleAppearanceButton</item>
+        <item name="textAppearanceCaption">?attr/styleAppearanceCaption</item>
+        <item name="textAppearanceOverline">?attr/styleAppearanceOverline</item>
+
+        <!-- Shapes -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.BaseTheme.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.BaseTheme.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.BaseTheme.LargeComponent</item>
+    </style>
+
+</resources>

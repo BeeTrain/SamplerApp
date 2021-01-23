@@ -8,6 +8,7 @@ val featureModulesDirectory = "${project.rootDir}/source/feature"
 plugins {
     id(BuildPlugins.androidApplication)
     id(BuildPlugins.kotlinAndroid)
+    id(BuildPlugins.navigation)
 }
 
 android {
@@ -20,6 +21,22 @@ android {
         targetSdkVersion(ApplicationConfig.targetSdkVersion)
         versionCode(getGitVersionCode())
         versionName(getGitVersionName())
+    }
+
+    compileOptions {
+        sourceCompatibility = javaVersion
+        targetCompatibility = javaVersion
+    }
+
+    kotlinOptions.jvmTarget = javaVersion.toString()
+
+    lintOptions {
+        disable(
+            "RtlSymmetry", "RtlHardcoded", "InvalidPackage", "ParcelCreator",
+            "AppLinkUrlError", "MissingTranslation", "DuplicatePlatformClasses", "CheckResult"
+        )
+
+        enable("DirectColorUse", "DirectColorInDrawableUse")
     }
 
     buildTypes {
@@ -62,5 +79,6 @@ dependencies {
     // Libraries
     implementation(KotlinDependencies.stdLib)
     AndroidXDependencies.all(this)
+    DIDependencies.all(this)
     MiscDependencies.all(this)
 }

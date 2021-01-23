@@ -9,6 +9,9 @@ android {
 
 dependencies {
     implementation(project(ApplicationConfig.Modules.CORE_UI.path))
+    implementation(project(ApplicationConfig.Modules.WIDGET.path))
     setupDefaultModuleDependencies()
-    AndroidXDependencies.ui(this)
+
+    AndroidXDependencies.all(this)
+    DIDependencies.all(this)
 }

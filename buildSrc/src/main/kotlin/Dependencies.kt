@@ -9,6 +9,8 @@ object BuildPlugins {
     const val androidLibrary = "com.android.library"
 
     const val kotlinAndroid = "kotlin-android"
+    const val kotlinKapt = "kotlin-kapt"
+    const val navigation = "androidx.navigation.safeargs.kotlin"
 }
 
 object KotlinDependencies {
@@ -45,6 +47,7 @@ object AndroidXDependencies {
         const val materialVersion = "1.2.1"
         const val constraintLayoutVersion = "2.0.4"
         const val lifecycleVersion = "2.2.0"
+        const val navigationVersion = "2.3.2"
     }
 
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreVersion}"
@@ -53,12 +56,51 @@ object AndroidXDependencies {
     const val constraintLayout = "androidx.constraintlayout:constraintlayout:${Versions.constraintLayoutVersion}"
     const val lifecycle = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycleVersion}"
 
-    fun all(dependencies: DependencyHandler) = dependencies.apply {
+    const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigationVersion}"
+    const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigationVersion}"
+
+    fun core(dependencies: DependencyHandler) = dependencies.apply {
         implementation(coreKtx)
+    }
+
+    fun ui(dependencies: DependencyHandler) = dependencies.apply {
+        core(this)
         implementation(appCompat)
         implementation(material)
         implementation(constraintLayout)
+    }
+
+    fun navigation(dependencies: DependencyHandler) = dependencies.apply {
+        implementation(navigationFragment)
+        implementation(navigationUi)
+    }
+
+    fun all(dependencies: DependencyHandler) = dependencies.apply {
+        ui(this)
+        navigation(this)
         implementation(lifecycle)
+    }
+}
+
+object DIDependencies {
+    object Versions {
+        const val koinVersion = "2.1.5"
+    }
+
+    const val core = "org.koin:koin-core:${Versions.koinVersion}"
+    const val ext = "org.koin:koin-core-ext:${Versions.koinVersion}"
+    const val android = "org.koin:koin-android:${Versions.koinVersion}"
+    const val viewModel = "org.koin:koin-androidx-viewmodel:${Versions.koinVersion}"
+    const val scope = "org.koin:koin-androidx-scope:${Versions.koinVersion}"
+    const val test = "org.koin:koin-test:${Versions.koinVersion}"
+
+    fun all(dependencies: DependencyHandler) = dependencies.apply {
+        implementation(core)
+        implementation(ext)
+        implementation(android)
+        implementation(viewModel)
+        implementation(scope)
+        implementation(test)
     }
 }
 

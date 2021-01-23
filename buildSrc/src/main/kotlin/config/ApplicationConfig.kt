@@ -11,7 +11,11 @@ object ApplicationConfig {
         APP(":app"),
 
         CORE(":core"),
-        CORE_UI(":core_ui")
+        CORE_UI(":core_ui"),
+        WIDGET(":widget"),
+
+        SPLASH(":splash"),
+        MAIN(":main"),
     }
 }
 

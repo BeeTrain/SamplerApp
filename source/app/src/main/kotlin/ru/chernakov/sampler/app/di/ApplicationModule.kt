@@ -6,7 +6,6 @@ import ru.chernakov.sampler.splash.api.di.splashModule
 
 object ApplicationModule {
     private val applicationModule = module {
-
     }
 
     val modules = listOf(

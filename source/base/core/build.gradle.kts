@@ -1,10 +1,9 @@
+import config.setupDefaultModuleDependencies
+
 plugins {
     id(BuildPlugins.androidLibrary)
     id(BuildPlugins.kotlinAndroid)
-}
-
-android {
-    setupDefaultModuleConfig()
+    id(BuildPlugins.androidModule)
 }
 
 dependencies {

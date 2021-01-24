@@ -20,7 +20,6 @@ class SamplerApp : Application() {
         LifecycleCallback.register(this)
     }
 
-
     private fun initKoin() {
         startKoin {
             androidContext(this@SamplerApp)

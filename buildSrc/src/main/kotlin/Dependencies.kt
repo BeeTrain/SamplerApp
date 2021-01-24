@@ -9,8 +9,13 @@ object BuildPlugins {
     const val androidLibrary = "com.android.library"
 
     const val kotlinAndroid = "kotlin-android"
+    const val androidModule = "android-module"
     const val kotlinKapt = "kotlin-kapt"
+
     const val navigation = "androidx.navigation.safeargs.kotlin"
+
+    const val ktlint = "org.jlleitschuh.gradle.ktlint"
+    const val detekt = "io.gitlab.arturbosch.detekt"
 }
 
 object KotlinDependencies {

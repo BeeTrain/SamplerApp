@@ -3,8 +3,8 @@ package ru.chernakov.sampler.widget.container
 import android.content.Context
 import android.util.AttributeSet
 import androidx.constraintlayout.widget.ConstraintLayout
+import ru.chernakov.sampler.R
 import ru.chernakov.sampler.coreui.extension.getAttrColor
-import ru.chernakov.sampler.widget.R
 
 class ConstraintContainer
 @JvmOverloads constructor(

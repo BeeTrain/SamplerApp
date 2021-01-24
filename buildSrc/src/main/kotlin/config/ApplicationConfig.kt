@@ -1,3 +1,5 @@
+import org.gradle.api.JavaVersion
+
 object ApplicationConfig {
     const val applicationId = "ru.chernakov.samplerapp"
 
@@ -7,12 +9,13 @@ object ApplicationConfig {
 
     const val buildToolsVersion = "30.0.2"
 
+    val javaVersion = JavaVersion.VERSION_1_8
+
     enum class Modules(val path: String) {
         APP(":app"),
 
         CORE(":core"),
         CORE_UI(":core_ui"),
-        WIDGET(":widget"),
 
         SPLASH(":splash"),
         MAIN(":main"),

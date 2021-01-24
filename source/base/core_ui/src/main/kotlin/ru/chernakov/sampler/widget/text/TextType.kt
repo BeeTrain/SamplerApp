@@ -1,6 +1,6 @@
 package ru.chernakov.sampler.widget.text
 
-enum class Type {
+enum class TextType {
     NONE,
 
     // Headline types

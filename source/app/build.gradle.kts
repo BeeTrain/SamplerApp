@@ -32,8 +32,14 @@ android {
 
     lintOptions {
         disable(
-            "RtlSymmetry", "RtlHardcoded", "InvalidPackage", "ParcelCreator",
-            "AppLinkUrlError", "MissingTranslation", "DuplicatePlatformClasses", "CheckResult"
+            "RtlSymmetry",
+            "RtlHardcoded",
+            "InvalidPackage",
+            "ParcelCreator",
+            "AppLinkUrlError",
+            "MissingTranslation",
+            "DuplicatePlatformClasses",
+            "CheckResult"
         )
 
         enable("DirectColorUse", "DirectColorInDrawableUse")

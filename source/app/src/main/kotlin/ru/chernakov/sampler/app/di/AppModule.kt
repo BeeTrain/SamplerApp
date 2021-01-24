@@ -6,5 +6,4 @@ import ru.chernakov.sampler.presentation.application.ApplicationViewModel
 
 val appModule = module {
     viewModel { ApplicationViewModel() }
-
 }

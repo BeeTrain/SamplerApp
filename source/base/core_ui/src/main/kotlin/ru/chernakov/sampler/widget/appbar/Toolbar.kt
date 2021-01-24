@@ -4,9 +4,9 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
 import com.google.android.material.appbar.MaterialToolbar
+import ru.chernakov.sampler.R
 import ru.chernakov.sampler.coreui.extension.getAttrColor
 import ru.chernakov.sampler.coreui.extension.getDrawableExt
-import ru.chernakov.sampler.widget.R
 
 class Toolbar
 @JvmOverloads constructor(

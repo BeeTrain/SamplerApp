@@ -30,4 +30,3 @@ fun Context.getFont(@FontRes id: Int): Typeface? {
 fun Context.getDrawableExt(@DrawableRes id: Int): Drawable? {
     return ResourcesCompat.getDrawable(resources, id, theme)
 }
-

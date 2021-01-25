@@ -6,6 +6,7 @@ import KotlinDependencies
 import MiscDependencies
 import SourceSets
 import com.android.build.gradle.BaseExtension
+import extensions.setupQualityTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.artifacts.dsl.DependencyHandler
@@ -47,6 +48,8 @@ class ModulePlugin : Plugin<Project> {
             tasks.withType<KotlinCompile> {
                 kotlinOptions.jvmTarget = ApplicationConfig.javaVersion.toString()
             }
+
+            setupQualityTask()
         }
     }
 }

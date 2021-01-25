@@ -1,6 +1,7 @@
 import extensions.getGitVersionCode
 import extensions.getGitVersionName
 import extensions.isGradleProjectDir
+import extensions.setupQualityTask
 
 val baseModulesDirectory = "${project.rootDir}/source/base"
 val featureModulesDirectory = "${project.rootDir}/source/feature"
@@ -41,8 +42,6 @@ android {
             "DuplicatePlatformClasses",
             "CheckResult"
         )
-
-        enable("DirectColorUse", "DirectColorInDrawableUse")
     }
 
     buildTypes {
@@ -67,9 +66,14 @@ android {
     kotlinOptions {
         jvmTarget = javaVersion.toString()
     }
+
+    setupQualityTask()
 }
 
 dependencies {
+    // Custom Lint rules
+    lintChecks(project(ApplicationConfig.Modules.LINT.path))
+
     // Modules
     file(baseModulesDirectory).listFiles()?.forEach { baseModule ->
         if (baseModule.isDirectory && baseModule.isGradleProjectDir) {

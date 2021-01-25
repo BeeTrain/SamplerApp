@@ -16,6 +16,7 @@ object ApplicationConfig {
 
         CORE(":core"),
         CORE_UI(":core_ui"),
+        LINT(":lint"),
 
         SPLASH(":splash"),
         MAIN(":main"),

@@ -1,3 +1,4 @@
+import extensions.compileOnly
 import extensions.implementation
 import org.gradle.api.JavaVersion
 import org.gradle.api.artifacts.dsl.DependencyHandler
@@ -8,9 +9,13 @@ object BuildPlugins {
     const val androidApplication = "com.android.application"
     const val androidLibrary = "com.android.library"
 
+    const val javaLibrary = "java-library"
+
+    const val kotlin = "kotlin"
     const val kotlinAndroid = "kotlin-android"
     const val androidModule = "android-module"
     const val kotlinKapt = "kotlin-kapt"
+    const val kotlinJVM = "org.jetbrains.kotlin.jvm"
 
     const val navigation = "androidx.navigation.safeargs.kotlin"
 
@@ -42,6 +47,20 @@ object KotlinDependencies {
     fun all(dependencies: DependencyHandler) = dependencies.apply {
         defaultModuleLibs(this)
         coroutines(this)
+    }
+}
+
+object LintDependencies {
+    object Versions {
+        const val lint = "27.1.1"
+    }
+
+    const val lintApi = "com.android.tools.lint:lint-api:${Versions.lint}"
+    const val lintChecks = "com.android.tools.lint:lint-checks:${Versions.lint}"
+
+    fun all(dependencies: DependencyHandler) = dependencies.apply {
+        compileOnly(lintApi)
+        compileOnly(lintChecks)
     }
 }
 

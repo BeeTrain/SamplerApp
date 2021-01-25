@@ -21,12 +21,6 @@ allprojects {
     detekt {
         config = files("$rootDir/config/quality/detekt-config.yml")
     }
-
-    tasks.register("checkBeforePush").configure {
-        group = "verification"
-        description = "Inspect your code before push"
-        dependsOn("ktlintCheck", "detekt")
-    }
 }
 
 tasks.register("clean").configure {

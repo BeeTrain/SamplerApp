@@ -12,6 +12,12 @@ import org.gradle.kotlin.dsl.add
 fun DependencyHandler.implementation(dependencyNotation: Any): Dependency? =
     add("implementation", dependencyNotation)
 
+fun DependencyHandler.compileOnly(dependencyNotation: Any): Dependency? =
+    add("compileOnly", dependencyNotation)
+
+fun DependencyHandler.lintChecks(dependencyNotation: Any): Dependency? =
+    add("lintChecks", dependencyNotation)
+
 fun DependencyHandler.implementation(
     dependencyNotation: String,
     dependencyConfiguration: Action<ExternalModuleDependency>

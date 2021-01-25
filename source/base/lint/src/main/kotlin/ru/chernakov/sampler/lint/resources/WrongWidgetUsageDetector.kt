@@ -19,13 +19,14 @@ class WrongWidgetUsageDetector : ResourceXmlDetector() {
     override fun getApplicableElements() = XmlScannerConstants.ALL
 
     override fun visitElement(context: XmlContext, element: Element) {
-        if (!element.tagName.contains(CORE_UI_WIDGET_PACKAGE)) {
+        if (!element.tagName.contains(CORE_UI_WIDGET_PACKAGE) && ignoredTags.contains(element.tagName).not()) {
             context.report(ISSUE, context.getLocation(element), EXPLANATION)
         }
     }
 
     companion object {
         private const val CORE_UI_WIDGET_PACKAGE = "ru.chernakov.sampler.widget."
+        private val ignoredTags = listOf("include", "fragment", "merge", "tag", "view", "View")
 
         private const val DESCRIPTION = "Marks widgets that are not part of the :core_ui module."
         private const val EXPLANATION =

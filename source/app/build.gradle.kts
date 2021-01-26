@@ -1,6 +1,7 @@
 import extensions.getGitVersionCode
 import extensions.getGitVersionName
 import extensions.isGradleProjectDir
+import extensions.setupDependencyUpdatesTask
 import extensions.setupQualityTask
 
 val baseModulesDirectory = "${project.rootDir}/source/base"
@@ -10,6 +11,7 @@ plugins {
     id(BuildPlugins.androidApplication)
     id(BuildPlugins.kotlinAndroid)
     id(BuildPlugins.navigation)
+    id(BuildPlugins.dependenciesVersions)
 }
 
 android {
@@ -68,6 +70,7 @@ android {
     }
 
     setupQualityTask()
+    setupDependencyUpdatesTask()
 }
 
 dependencies {

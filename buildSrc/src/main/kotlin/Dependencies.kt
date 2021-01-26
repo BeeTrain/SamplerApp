@@ -18,6 +18,7 @@ object BuildPlugins {
     const val kotlinJVM = "org.jetbrains.kotlin.jvm"
 
     const val navigation = "androidx.navigation.safeargs.kotlin"
+    const val dependenciesVersions = "com.github.ben-manes.versions"
 
     const val ktlint = "org.jlleitschuh.gradle.ktlint"
     const val detekt = "io.gitlab.arturbosch.detekt"
@@ -108,7 +109,7 @@ object AndroidXDependencies {
 
 object DIDependencies {
     object Versions {
-        const val koinVersion = "2.1.5"
+        const val koinVersion = "2.2.2"
     }
 
     const val core = "org.koin:koin-core:${Versions.koinVersion}"

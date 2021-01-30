@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="navigation_feed">Feed</string>
+    <string name="navigation_services">Services</string>
+    <string name="navigation_profile">Profile</string>
+
+</resources>

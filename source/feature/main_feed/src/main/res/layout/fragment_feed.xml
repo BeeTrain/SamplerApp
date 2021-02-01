@@ -6,14 +6,33 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ru.chernakov.sampler.widget.text.TextView
-        android:layout_width="wrap_content"
+    <ru.chernakov.sampler.widget.appbar.Toolbar
+        android:id="@+id/feed_toolbar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Feed"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:textType="Headline1" />
+        app:title="Feed" />
+
+    <ru.chernakov.sampler.widget.image.LottieView
+        android:id="@+id/feed_stub_image"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feed_toolbar"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="lottie/anim-developing.json" />
+
+    <ru.chernakov.sampler.widget.text.TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Screen in developing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feed_stub_image"
+        app:textType="Subtitle1" />
 
 </ru.chernakov.sampler.widget.container.ConstraintContainer>

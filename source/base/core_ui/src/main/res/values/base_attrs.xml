@@ -7,6 +7,7 @@
 
     <attr name="colorNegative" format="reference|color" />
     <attr name="colorPositive" format="reference|color" />
+    <attr name="colorHint" format="reference|color" />
 
     <attr name="styleAppearanceHeadline1" format="reference" />
     <attr name="styleAppearanceHeadline2" format="reference" />

@@ -9,4 +9,5 @@ plugins {
 dependencies {
     setupDefaultModuleDependencies()
     AndroidXDependencies.all(this)
+    MiscDependencies.lottie(this)
 }

@@ -3,7 +3,10 @@ package ru.chernakov.sampler.app.navigation
 import android.os.Bundle
 import androidx.navigation.NavController
 import androidx.navigation.NavDirections
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.FragmentNavigator
+import ru.chernakov.sampler.coreui.extension.setFadeAnim
+import ru.chernakov.sampler.coreui.extension.setHorizontalFullInAnim
 import ru.chernakov.sampler.main.api.navigation.MainNavigator
 import ru.chernakov.sampler.splash.api.navigation.SplashNavigator
 import ru.chernakov.sampler.splash.presentation.SplashFragmentDirections
@@ -21,14 +24,18 @@ class ApplicationNavigator : AppNavigator, SplashNavigator, MainNavigator {
     }
 
     override fun fromSplashToMain() {
-        navigate(SplashFragmentDirections.actionOpenMain())
+        navigate(
+            action = SplashFragmentDirections.actionOpenMain(),
+            navOptions = NavOptions.Builder().setHorizontalFullInAnim().build()
+        )
     }
 
     private fun navigate(
         action: NavDirections,
         args: Bundle? = null,
-        navExtras: FragmentNavigator.Extras? = null
+        navExtras: FragmentNavigator.Extras? = null,
+        navOptions: NavOptions? = NavOptions.Builder().setFadeAnim().build()
     ) {
-        appNavController?.navigate(action.actionId, args, null, navExtras)
+        appNavController?.navigate(action.actionId, args, navOptions, navExtras)
     }
 }

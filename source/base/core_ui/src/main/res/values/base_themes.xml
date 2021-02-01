@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="ParentTheme" parent="Base.Theme">
-    </style>
+    <style name="ParentTheme" parent="Base.Theme" />
 
     <style name="Base.Theme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/purple_500</item>
@@ -24,6 +23,7 @@
         <item name="colorNegative">@color/red_600</item>
         <item name="colorError">?attr/colorNegative</item>
         <item name="colorPositive">@color/green_600</item>
+        <item name="colorHint">@color/grey_500</item>
 
         <item name="android:statusBarColor" tools:ignore="NewApi">?attr/colorSurface</item>
         <item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>

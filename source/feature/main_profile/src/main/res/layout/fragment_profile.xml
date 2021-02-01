@@ -6,14 +6,21 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <ru.chernakov.sampler.widget.text.TextView
-        android:layout_width="wrap_content"
+    <ru.chernakov.sampler.widget.appbar.Toolbar
+        android:id="@+id/profile_toolbar"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Profile"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:textType="Headline1" />
+        app:title="Profile" />
+
+    <ru.chernakov.sampler.widget.list.ToggleListItem
+        android:id="@+id/profile_dark_theme_item"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_toolbar" />
 
 </ru.chernakov.sampler.widget.container.ConstraintContainer>

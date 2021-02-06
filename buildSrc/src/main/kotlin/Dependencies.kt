@@ -26,7 +26,7 @@ object BuildPlugins {
 
 object KotlinDependencies {
     object Versions {
-        const val kotlinVersion = "1.4.21"
+        const val kotlinVersion = "1.4.30"
         const val kotlinCoroutines = "1.3.4"
     }
 

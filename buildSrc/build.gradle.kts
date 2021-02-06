@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompile
+
 plugins {
     `java-gradle-plugin`
     `kotlin-dsl`
@@ -10,7 +12,7 @@ repositories {
     maven("https://plugins.gradle.org/m2/")
 }
 
-val kotlinVersion = "1.4.21"
+val kotlinVersion = "1.4.30"
 val buildToolsVersion = "4.1.2"
 val navigationVersion = "2.3.2"
 val ktlintVersion = "9.4.1"
@@ -35,4 +37,8 @@ gradlePlugin {
             implementationClass = "config.ModulePlugin"
         }
     }
+}
+
+tasks.withType(KotlinJvmCompile::class) {
+    kotlinOptions.useIR = true
 }

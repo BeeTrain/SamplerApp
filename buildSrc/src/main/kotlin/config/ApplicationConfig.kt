@@ -15,6 +15,7 @@ object ApplicationConfig {
         APP(":app"),
 
         CORE(":core"),
+        CORE_DATA(":core_data"),
         CORE_UI(":core_ui"),
         LINT(":lint"),
 

@@ -3,6 +3,7 @@ package ru.chernakov.sampler.coreui.extension
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
+import androidx.lifecycle.MutableLiveData
 import ru.chernakov.sampler.coreui.util.lifecycle.SafeObserver
 
 fun <T> LiveData<T?>.observeNullable(owner: LifecycleOwner, observer: (T?) -> Unit) {
@@ -45,3 +46,5 @@ fun <A, B, R> zipLiveData(
 
 fun <A, B, R> LiveData<A>.zipWith(b: LiveData<B>, block: (A, B) -> R): LiveData<R> =
     zipLiveData(this, b, block)
+
+fun <T> MutableLiveData<T>.asLiveData(): LiveData<T> = this

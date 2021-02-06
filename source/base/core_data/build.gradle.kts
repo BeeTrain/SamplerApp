@@ -7,10 +7,7 @@ plugins {
 }
 
 dependencies {
-    implementation(project(ApplicationConfig.Modules.CORE_UI.path))
-    implementation(project(ApplicationConfig.Modules.CORE_DATA.path))
     setupDefaultModuleDependencies()
-
-    AndroidXDependencies.all(this)
+    implementation(project(ApplicationConfig.Modules.CORE.path))
     DIDependencies.all(this)
 }

@@ -6,7 +6,7 @@ import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.chernakov.sampler.coreui.presentation.fragment.BaseFragment
 import ru.chernakov.sampler.splash.R
-import ru.chernakov.sampler.splash.api.navigation.SplashNavigator
+import ru.chernakov.sampler.splash.app.navigation.SplashNavigator
 
 class SplashFragment : BaseFragment(R.layout.fragment_splash) {
     private val navigator: SplashNavigator by inject()

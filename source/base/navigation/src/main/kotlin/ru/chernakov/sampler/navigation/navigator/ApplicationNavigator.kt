@@ -7,8 +7,8 @@ import androidx.navigation.NavOptions
 import androidx.navigation.fragment.FragmentNavigator
 import ru.chernakov.sampler.coreui.extension.setFadeAnim
 import ru.chernakov.sampler.coreui.extension.setHorizontalFullInAnim
-import ru.chernakov.sampler.main.api.navigation.MainNavigator
-import ru.chernakov.sampler.splash.api.navigation.SplashNavigator
+import ru.chernakov.sampler.main.app.navigation.MainNavigator
+import ru.chernakov.sampler.splash.app.navigation.SplashNavigator
 import ru.chernakov.sampler.splash.presentation.SplashFragmentDirections
 
 class ApplicationNavigator : AppNavigator, SplashNavigator, MainNavigator {

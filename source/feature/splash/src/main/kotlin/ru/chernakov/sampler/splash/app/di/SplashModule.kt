@@ -1,4 +1,4 @@
-package ru.chernakov.sampler.splash.api.di
+package ru.chernakov.sampler.splash.app.di
 
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

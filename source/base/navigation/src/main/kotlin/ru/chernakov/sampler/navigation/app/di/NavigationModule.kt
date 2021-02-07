@@ -1,10 +1,10 @@
-package ru.chernakov.sampler.navigation.api.di
+package ru.chernakov.sampler.navigation.app.di
 
 import org.koin.dsl.module
-import ru.chernakov.sampler.main.api.navigation.MainNavigator
+import ru.chernakov.sampler.main.app.navigation.MainNavigator
 import ru.chernakov.sampler.navigation.navigator.AppNavigator
 import ru.chernakov.sampler.navigation.navigator.ApplicationNavigator
-import ru.chernakov.sampler.splash.api.navigation.SplashNavigator
+import ru.chernakov.sampler.splash.app.navigation.SplashNavigator
 
 val navigationModule = module {
     single { ApplicationNavigator() }

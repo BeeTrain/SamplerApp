@@ -1,16 +1,14 @@
+import extensions.baseModulesDirectory
+import extensions.featureModulesDirectory
 import extensions.getGitVersionCode
 import extensions.getGitVersionName
 import extensions.isGradleProjectDir
 import extensions.setupDependencyUpdatesTask
 import extensions.setupQualityTask
 
-val baseModulesDirectory = "${project.rootDir}/source/base"
-val featureModulesDirectory = "${project.rootDir}/source/feature"
-
 plugins {
     id(BuildPlugins.androidApplication)
     id(BuildPlugins.kotlinAndroid)
-    id(BuildPlugins.navigation)
     id(BuildPlugins.dependenciesVersions)
 }
 

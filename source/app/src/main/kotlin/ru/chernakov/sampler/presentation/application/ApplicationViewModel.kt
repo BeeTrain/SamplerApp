@@ -6,5 +6,4 @@ import ru.chernakov.sampler.mainprofile.domain.interactor.SettingsInteractor
 class ApplicationViewModel(settingsInteractor: SettingsInteractor) : BaseViewModel() {
 
     val appThemeLiveData = settingsInteractor.getAppThemeObserver()
-
 }

@@ -1,4 +1,4 @@
-package ru.chernakov.sampler.app.navigation
+package ru.chernakov.sampler.navigation.navigator
 
 import android.os.Bundle
 import androidx.navigation.NavController

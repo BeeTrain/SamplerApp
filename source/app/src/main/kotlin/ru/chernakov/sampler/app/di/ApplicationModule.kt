@@ -4,6 +4,7 @@ import org.koin.dsl.module
 import ru.chernakov.sampler.coredata.api.di.dataModule
 import ru.chernakov.sampler.main.api.di.mainModule
 import ru.chernakov.sampler.mainprofile.api.di.profileModule
+import ru.chernakov.sampler.navigation.api.di.navigationModule
 import ru.chernakov.sampler.splash.api.di.splashModule
 
 object ApplicationModule {

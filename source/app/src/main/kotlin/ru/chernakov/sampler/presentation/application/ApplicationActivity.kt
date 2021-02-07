@@ -7,9 +7,9 @@ import androidx.navigation.findNavController
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.chernakov.sampler.R
-import ru.chernakov.sampler.app.navigation.AppNavigator
 import ru.chernakov.sampler.coreui.presentation.activity.BaseActivity
 import ru.chernakov.sampler.mainprofile.domain.model.settings.AppTheme
+import ru.chernakov.sampler.navigation.navigator.AppNavigator
 
 class ApplicationActivity : BaseActivity(R.layout.activity_application) {
     private val navigator: AppNavigator by inject()

@@ -26,6 +26,12 @@ fun Project.setupDependencyUpdatesTask() = apply {
     }
 }
 
+val Project.featureModulesDirectory
+    get() = "${rootDir}/source/feature"
+
+val Project.baseModulesDirectory
+    get() = "${rootDir}/source/base"
+
 private fun isNonStable(version: String): Boolean {
     val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.toUpperCase(Locale.getDefault()).contains(it) }
     val regex = "^[0-9,.v-]+(-r)?$".toRegex()

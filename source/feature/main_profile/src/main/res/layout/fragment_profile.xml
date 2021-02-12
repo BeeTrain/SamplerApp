@@ -15,12 +15,26 @@
         app:layout_constraintTop_toTopOf="parent"
         app:title="@string/title_profile" />
 
-    <ru.chernakov.sampler.widget.list.ToggleListItem
-        android:id="@+id/profile_dark_theme_item"
-        android:layout_width="0dp"
+    <ru.chernakov.sampler.widget.image.ImageView
+        android:id="@+id/profile_settings"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/action_settings"
+        android:padding="@dimen/keyline_4"
+        android:src="@drawable/ic_settings"
+        app:layout_constraintBottom_toBottomOf="@id/profile_toolbar"
+        app:layout_constraintEnd_toEndOf="@id/profile_toolbar"
+        app:layout_constraintTop_toTopOf="@id/profile_toolbar"
+        app:tint="?colorOnSurface" />
+
+    <ru.chernakov.sampler.widget.text.TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title_profile"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/profile_toolbar" />
+        app:layout_constraintTop_toBottomOf="@id/profile_toolbar"
+        app:textType="Headline3" />
 
 </ru.chernakov.sampler.widget.container.ConstraintContainer>

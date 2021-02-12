@@ -69,3 +69,12 @@ fun NavOptions.Builder.setFadeInModalOutAnim(): NavOptions.Builder {
 
     return this
 }
+
+fun NavOptions.Builder.setSlideInFromBottomFullAnim(): NavOptions.Builder {
+    setEnterAnim(R.anim.slide_up)
+    setExitAnim(R.anim.fade_out)
+    setPopEnterAnim(R.anim.fade_in)
+    setPopExitAnim(R.anim.slide_down)
+
+    return this
+}

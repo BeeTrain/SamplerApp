@@ -25,6 +25,7 @@ object ApplicationConfig {
         MAIN_FEED(":main_feed"),
         MAIN_SERVICES(":main_services"),
         MAIN_PROFILE(":main_profile"),
+        SETTINGS(":settings"),
     }
 }
 

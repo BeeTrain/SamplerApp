@@ -12,8 +12,8 @@ import ru.chernakov.sampler.coreui.extension.bind
 import ru.chernakov.sampler.coreui.extension.doOnApplyWindowInsets
 import ru.chernakov.sampler.coreui.extension.pxToDp
 import ru.chernakov.sampler.coreui.presentation.activity.BaseActivity
-import ru.chernakov.sampler.mainprofile.domain.model.AppTheme
 import ru.chernakov.sampler.navigation.navigator.AppNavigator
+import ru.chernakov.sampler.settings.domain.model.AppTheme
 import ru.chernakov.sampler.widget.container.ConstraintContainer
 
 class ApplicationActivity : BaseActivity(R.layout.activity_application) {

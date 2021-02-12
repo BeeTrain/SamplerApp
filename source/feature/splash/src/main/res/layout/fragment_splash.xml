@@ -6,7 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ru.chernakov.sampler.widget.text.TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:padding="@dimen/keyline_4"
+        android:textColor="?colorOnSurface"
+        app:layout_constraintBottom_toTopOf="@+id/splash_logo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:textType="Headline2" />
+
     <ru.chernakov.sampler.widget.image.ImageView
+        android:id="@+id/splash_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@string/app_name"

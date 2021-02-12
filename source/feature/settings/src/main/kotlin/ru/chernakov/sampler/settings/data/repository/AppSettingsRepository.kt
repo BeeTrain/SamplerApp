@@ -1,12 +1,12 @@
-package ru.chernakov.sampler.mainprofile.data.repository
+package ru.chernakov.sampler.settings.data.repository
 
 import android.content.SharedPreferences
 import androidx.lifecycle.MutableLiveData
 import ru.chernakov.sampler.coredata.prefs.SharedPreferencesApi
 import ru.chernakov.sampler.coreui.extension.asLiveData
-import ru.chernakov.sampler.mainprofile.data.mapper.AppThemeMapper
-import ru.chernakov.sampler.mainprofile.domain.model.AppTheme
-import ru.chernakov.sampler.mainprofile.domain.repository.SettingsRepository
+import ru.chernakov.sampler.settings.data.mapper.AppThemeMapper
+import ru.chernakov.sampler.settings.domain.model.AppTheme
+import ru.chernakov.sampler.settings.domain.repository.SettingsRepository
 
 class AppSettingsRepository(
     private val preferences: SharedPreferencesApi,

@@ -1,7 +1,7 @@
-package ru.chernakov.sampler.mainprofile.domain.repository
+package ru.chernakov.sampler.settings.domain.repository
 
 import androidx.lifecycle.LiveData
-import ru.chernakov.sampler.mainprofile.domain.model.AppTheme
+import ru.chernakov.sampler.settings.domain.model.AppTheme
 
 interface SettingsRepository {
 

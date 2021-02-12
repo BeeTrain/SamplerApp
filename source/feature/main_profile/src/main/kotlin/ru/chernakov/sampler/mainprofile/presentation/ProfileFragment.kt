@@ -2,31 +2,28 @@ package ru.chernakov.sampler.mainprofile.presentation
 
 import android.os.Bundle
 import android.view.View
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.chernakov.sampler.coreui.extension.findView
+import ru.chernakov.sampler.coreui.extension.setOnClickWithDelayListener
+import ru.chernakov.sampler.coreui.extension.startAnimation
 import ru.chernakov.sampler.coreui.presentation.fragment.BaseFragment
 import ru.chernakov.sampler.mainprofile.R
-import ru.chernakov.sampler.mainprofile.domain.model.AppTheme
-import ru.chernakov.sampler.widget.list.ToggleListItem
+import ru.chernakov.sampler.mainprofile.app.navigation.ProfileNavigator
+import ru.chernakov.sampler.widget.image.ImageView
 
 class ProfileFragment : BaseFragment(R.layout.fragment_profile) {
+    private val navigator: ProfileNavigator by inject()
     override val viewModel: ProfileViewModel by viewModel()
 
-    private val themeModeItem by findView<ToggleListItem>(R.id.profile_dark_theme_item)
+    private val settingsIcon by findView<ImageView>(R.id.profile_settings)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        with(viewModel) {
-            appThemeLiveData.observe(viewLifecycleOwner) { theme ->
-                themeModeItem.isChecked = theme == AppTheme.DARK
-            }
-        }
 
-        themeModeItem.apply {
-            title = getString(R.string.title_setting_app_theme)
-            checkedChangeListener = { _, isChecked ->
-                viewModel.switchAppTheme(isChecked)
-            }
+        settingsIcon.setOnClickWithDelayListener {
+            it.startAnimation(R.anim.rotation)
+            navigator.fromProfileToSettings()
         }
     }
 }

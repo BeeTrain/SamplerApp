@@ -21,6 +21,16 @@
     <fragment
         android:id="@+id/main"
         android:name="ru.chernakov.sampler.main.presentation.MainFragment"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main">
+
+        <action
+            android:id="@+id/actionFromMainToSettings"
+            app:destination="@id/settings" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settings"
+        android:name="ru.chernakov.sampler.settings.presentation.SettingsFragment"
+        tools:layout="@layout/fragment_settings" />
 
 </navigation>

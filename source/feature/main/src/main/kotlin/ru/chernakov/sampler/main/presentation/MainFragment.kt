@@ -3,11 +3,12 @@ package ru.chernakov.sampler.main.presentation
 import android.os.Bundle
 import android.view.MenuItem
 import android.view.View
+import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import ru.chernakov.sampler.coreui.extension.bind
+import ru.chernakov.sampler.coreui.extension.findView
 import ru.chernakov.sampler.coreui.extension.observeSafe
 import ru.chernakov.sampler.coreui.presentation.fragment.BaseFragment
 import ru.chernakov.sampler.main.R
@@ -17,11 +18,18 @@ import ru.chernakov.sampler.widget.navigation.BottomNavBar
 class MainFragment : BaseFragment(R.layout.fragment_main) {
     override val viewModel: MainViewModel by viewModel()
 
-    private val bottomNavBar by bind<BottomNavBar>(R.id.bottomNavBar)
+    private val bottomNavBar by findView<BottomNavBar>(R.id.bottomNavBar)
 
     private val bottomNavListener = getBottomNavListener()
+
     private val currentTabFragment: Fragment?
         get() = childFragmentManager.fragments.firstOrNull { !it.isHidden }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        activity?.onBackPressedDispatcher?.addCallback(this) { onBackPressed() }
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -37,7 +45,7 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         setSelectedTabIcon()
     }
 
-    fun onBackPressed() {
+    private fun onBackPressed() {
         if (viewModel.popTabBackStack()) return
         activity?.finish()
     }

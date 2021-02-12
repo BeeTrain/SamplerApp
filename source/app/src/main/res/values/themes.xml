@@ -1,4 +1,26 @@
 <resources>
 
-    <style name="Theme.SamplerApp" parent="ParentTheme" />
+    <style name="Theme.SamplerApp" parent="ParentTheme">
+        <item name="colorPrimary">@color/red_600</item>
+        <item name="colorPrimaryVariant">@color/red_800</item>
+        <item name="colorSecondary">@color/yellow_800</item>
+        <item name="colorSecondaryVariant">@color/yellow_900</item>
+
+        <item name="colorBackground">@color/white</item>
+        <item name="android:colorBackground">?colorBackground</item>
+        <item name="colorSurface">@color/grey_100</item>
+
+        <!-- Text, icons, dividers -->
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorOnBackground">@color/black</item>
+        <item name="colorOnSurface">@color/black</item>
+        <item name="colorOnError">@color/white</item>
+
+        <item name="colorNegative">@color/red_600</item>
+        <item name="colorError">?attr/colorNegative</item>
+        <item name="colorPositive">@color/green_600</item>
+        <item name="colorHint">@color/grey_500</item>
+
+    </style>
 </resources>

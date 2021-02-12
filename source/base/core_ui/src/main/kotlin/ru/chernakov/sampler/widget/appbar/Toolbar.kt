@@ -13,6 +13,7 @@ import android.view.WindowInsets
 import android.widget.TextView
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.updatePadding
+import com.google.android.material.appbar.MaterialToolbar
 import kotlin.math.max
 import ru.chernakov.sampler.R
 import ru.chernakov.sampler.coreui.extension.dpToPx
@@ -24,7 +25,7 @@ class Toolbar
 @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null
-) : androidx.appcompat.widget.Toolbar(context, attrs) {
+) : MaterialToolbar(context, attrs) {
 
     private val dividerPaint by unsafeLazy {
         Paint().apply {

@@ -2,14 +2,10 @@ package ru.chernakov.sampler.coreui.extension
 
 import android.graphics.Rect
 import android.view.View
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-
-inline fun <reified T : View> View.accessField(fieldName: String): T? {
-    val field = this::class.java.getDeclaredField(fieldName)
-    field.isAccessible = true
-    return field.get(this) as? T
-}
 
 fun View.doOnApplyWindowInsets(block: (View, insets: WindowInsetsCompat, initialPadding: Rect) -> WindowInsetsCompat) {
     val initialPadding = this.recordInitialPadding()
@@ -36,3 +32,8 @@ private fun View.requestApplyInsetsWhenAttached() {
         })
     }
 }
+
+@ColorInt
+fun View.getAttrColor(@AttrRes attr: Int) = context.getAttrColor(attr)
+
+fun View.getAttrResId(@AttrRes attr: Int) = context.getAttrResId(attr)

@@ -6,7 +6,7 @@ import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.chernakov.sampler.coreui.extension.findView
 import ru.chernakov.sampler.coreui.presentation.fragment.BaseFragment
 import ru.chernakov.sampler.mainprofile.R
-import ru.chernakov.sampler.mainprofile.domain.model.settings.AppTheme
+import ru.chernakov.sampler.mainprofile.domain.model.AppTheme
 import ru.chernakov.sampler.widget.list.ToggleListItem
 
 class ProfileFragment : BaseFragment(R.layout.fragment_profile) {

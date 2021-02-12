@@ -1,8 +1,9 @@
-package ru.chernakov.sampler.mainprofile.domain.model.settings
+package ru.chernakov.sampler.mainprofile.domain.repository
 
 import androidx.lifecycle.LiveData
+import ru.chernakov.sampler.mainprofile.domain.model.AppTheme
 
-interface SettingsDataSource {
+interface SettingsRepository {
 
     fun getAppTheme(): AppTheme
     fun setAppTheme(theme: AppTheme)

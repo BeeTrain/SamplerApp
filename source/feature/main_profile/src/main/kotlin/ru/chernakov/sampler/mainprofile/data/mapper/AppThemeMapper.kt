@@ -1,7 +1,7 @@
-package ru.chernakov.sampler.mainprofile.data.repository
+package ru.chernakov.sampler.mainprofile.data.mapper
 
 import androidx.appcompat.app.AppCompatDelegate
-import ru.chernakov.sampler.mainprofile.domain.model.settings.AppTheme
+import ru.chernakov.sampler.mainprofile.domain.model.AppTheme
 
 class AppThemeMapper {
 

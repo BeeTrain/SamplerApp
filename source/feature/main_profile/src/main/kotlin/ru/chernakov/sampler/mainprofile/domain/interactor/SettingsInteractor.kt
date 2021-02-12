@@ -1,14 +1,14 @@
 package ru.chernakov.sampler.mainprofile.domain.interactor
 
-import ru.chernakov.sampler.mainprofile.domain.model.settings.AppTheme
-import ru.chernakov.sampler.mainprofile.domain.model.settings.SettingsDataSource
+import ru.chernakov.sampler.mainprofile.domain.model.AppTheme
+import ru.chernakov.sampler.mainprofile.domain.repository.SettingsRepository
 
-class SettingsInteractor(private val settingsDataSource: SettingsDataSource) {
+class SettingsInteractor(private val settingsRepository: SettingsRepository) {
 
-    fun getAppThemeObserver() = settingsDataSource.getAppThemeLiveData()
+    fun getAppThemeObserver() = settingsRepository.getAppThemeLiveData()
 
     fun setNightModeEnabled(isEnabled: Boolean) {
         val theme = if (isEnabled) AppTheme.DARK else AppTheme.LIGHT
-        settingsDataSource.setAppTheme(theme)
+        settingsRepository.setAppTheme(theme)
     }
 }

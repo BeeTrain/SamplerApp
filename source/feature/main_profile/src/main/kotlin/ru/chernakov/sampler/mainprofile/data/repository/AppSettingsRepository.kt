@@ -4,13 +4,14 @@ import android.content.SharedPreferences
 import androidx.lifecycle.MutableLiveData
 import ru.chernakov.sampler.coredata.prefs.SharedPreferencesApi
 import ru.chernakov.sampler.coreui.extension.asLiveData
-import ru.chernakov.sampler.mainprofile.domain.model.settings.AppTheme
-import ru.chernakov.sampler.mainprofile.domain.model.settings.SettingsDataSource
+import ru.chernakov.sampler.mainprofile.data.mapper.AppThemeMapper
+import ru.chernakov.sampler.mainprofile.domain.model.AppTheme
+import ru.chernakov.sampler.mainprofile.domain.repository.SettingsRepository
 
-class SettingsRepository(
+class AppSettingsRepository(
     private val preferences: SharedPreferencesApi,
     private val appThemeMapper: AppThemeMapper
-) : SettingsDataSource {
+) : SettingsRepository {
 
     private val preferenceChangedListener = SharedPreferences.OnSharedPreferenceChangeListener { _, key ->
         when (key) {

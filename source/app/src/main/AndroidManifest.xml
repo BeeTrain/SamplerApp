@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="ru.chernakov.sampler">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".SamplerApp"
         android:allowBackup="true"

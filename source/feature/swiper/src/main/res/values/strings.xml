@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="title_swiper">Swiper</string>
+    <string name="title_swiper">Witcher Heroes</string>
+
+    <string name="name_geralt">Geralt</string>
+    <string name="name_ciri">Ciri</string>
+    <string name="name_yennefer">Yennefer</string>
+    <string name="name_triss">Triss</string>
+    <string name="name_vesemir">Vesemir</string>
+    <string name="name_eskel">Eskel</string>
+    <string name="name_lambert">Lambert</string>
+
+    <string name="url_geralt">https://gwent.one/video/card/loop/ob/112103.mp4</string>
+    <string name="url_ciri">https://gwent.one/video/card/loop/ob/112101.mp4</string>
+    <string name="url_yennefer">https://gwent.one/video/card/loop/ob/112113.mp4</string>
+    <string name="url_triss">https://gwent.one/video/card/loop/ob/112106.mp4</string>
+    <string name="url_vesemir">https://gwent.one/video/card/loop/ob/112203.mp4</string>
+    <string name="url_eskel">https://gwent.one/video/card/loop/ob/112202.mp4</string>
+    <string name="url_lambert">https://gwent.one/video/card/loop/ob/200235.mp4</string>
+
 </resources>

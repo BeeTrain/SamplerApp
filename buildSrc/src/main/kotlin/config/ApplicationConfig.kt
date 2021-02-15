@@ -26,6 +26,7 @@ object ApplicationConfig {
         MAIN_SERVICES(":main_services"),
         MAIN_PROFILE(":main_profile"),
         SETTINGS(":settings"),
+        SWIPER(":swiper"),
     }
 }
 

@@ -26,11 +26,21 @@
         <action
             android:id="@+id/actionFromMainToSettings"
             app:destination="@id/settings" />
+
+        <action
+            android:id="@+id/actionFromMainToSwiper"
+            app:destination="@+id/swiper" />
+
     </fragment>
 
     <fragment
         android:id="@+id/settings"
         android:name="ru.chernakov.sampler.settings.presentation.SettingsFragment"
         tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/swiper"
+        android:name="ru.chernakov.sampler.swiper.presentation.SwiperFragment"
+        tools:layout="fragment_swiper" />
 
 </navigation>

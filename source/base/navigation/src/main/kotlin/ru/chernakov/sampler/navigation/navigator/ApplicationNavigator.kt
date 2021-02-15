@@ -11,11 +11,13 @@ import ru.chernakov.sampler.coreui.extension.setSlideInFromBottomFullAnim
 import ru.chernakov.sampler.main.app.navigation.MainNavigator
 import ru.chernakov.sampler.main.presentation.MainFragmentDirections
 import ru.chernakov.sampler.mainprofile.app.navigation.ProfileNavigator
+import ru.chernakov.sampler.mainservices.app.navigation.ServicesNavigator
 import ru.chernakov.sampler.settings.app.SettingsNavigator
 import ru.chernakov.sampler.splash.app.navigation.SplashNavigator
 import ru.chernakov.sampler.splash.presentation.SplashFragmentDirections
 
-class ApplicationNavigator : AppNavigator, SplashNavigator, MainNavigator, ProfileNavigator, SettingsNavigator {
+class ApplicationNavigator : AppNavigator,
+    SplashNavigator, MainNavigator, ProfileNavigator, SettingsNavigator, ServicesNavigator {
 
     private var appNavController: NavController? = null
 
@@ -43,6 +45,13 @@ class ApplicationNavigator : AppNavigator, SplashNavigator, MainNavigator, Profi
 
     override fun fromSettingsToMain() {
         appNavController?.popBackStack()
+    }
+
+    override fun fromServicesToSwiper() {
+        appNavController?.navigate(
+            action = MainFragmentDirections.actionFromMainToSwiper(),
+            navOptions = NavOptions.Builder().setHorizontalFullInAnim().build()
+        )
     }
 
     private fun NavController.navigate(

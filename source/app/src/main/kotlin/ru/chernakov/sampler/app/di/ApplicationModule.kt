@@ -7,6 +7,7 @@ import ru.chernakov.sampler.mainprofile.app.di.profileModule
 import ru.chernakov.sampler.navigation.app.di.navigationModule
 import ru.chernakov.sampler.settings.app.di.settingsModule
 import ru.chernakov.sampler.splash.app.di.splashModule
+import ru.chernakov.sampler.swiper.app.swiperModule
 
 object ApplicationModule {
     private val applicationModule = module {
@@ -21,5 +22,6 @@ object ApplicationModule {
         mainModule,
         profileModule,
         settingsModule,
+        swiperModule
     )
 }

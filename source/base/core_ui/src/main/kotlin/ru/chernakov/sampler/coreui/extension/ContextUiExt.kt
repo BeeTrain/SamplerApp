@@ -6,8 +6,10 @@ import android.graphics.drawable.Drawable
 import android.util.TypedValue
 import androidx.annotation.AttrRes
 import androidx.annotation.ColorInt
+import androidx.annotation.ColorRes
 import androidx.annotation.DrawableRes
 import androidx.annotation.FontRes
+import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
 
 @ColorInt
@@ -29,4 +31,8 @@ fun Context.getFont(@FontRes id: Int): Typeface? {
 
 fun Context.getDrawableExt(@DrawableRes id: Int): Drawable? {
     return ResourcesCompat.getDrawable(resources, id, theme)
+}
+
+fun Context.getColorExt(@ColorRes id: Int): Int {
+    return ContextCompat.getColor(this, id)
 }

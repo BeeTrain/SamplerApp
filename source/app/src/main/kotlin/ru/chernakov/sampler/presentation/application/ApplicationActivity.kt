@@ -14,7 +14,7 @@ import ru.chernakov.sampler.coreui.extension.pxToDp
 import ru.chernakov.sampler.coreui.presentation.activity.BaseActivity
 import ru.chernakov.sampler.navigation.navigator.AppNavigator
 import ru.chernakov.sampler.settings.domain.model.AppTheme
-import ru.chernakov.sampler.widget.container.ConstraintContainer
+import ru.chernakov.sampler.widget.container.constraint.ConstraintContainer
 
 class ApplicationActivity : BaseActivity(R.layout.activity_application) {
     private val viewModel: ApplicationViewModel by viewModel()

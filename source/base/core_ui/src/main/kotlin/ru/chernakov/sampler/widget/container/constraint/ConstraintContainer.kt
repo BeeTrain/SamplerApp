@@ -1,4 +1,4 @@
-package ru.chernakov.sampler.widget.container
+package ru.chernakov.sampler.widget.container.constraint
 
 import android.content.Context
 import android.util.AttributeSet

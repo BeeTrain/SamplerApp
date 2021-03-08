@@ -8,7 +8,7 @@ import androidx.core.view.isVisible
 import ru.chernakov.sampler.R
 import ru.chernakov.sampler.coreui.extension.bind
 import ru.chernakov.sampler.widget.button.SwitchButton
-import ru.chernakov.sampler.widget.container.ConstraintContainer
+import ru.chernakov.sampler.widget.container.constraint.ConstraintContainer
 import ru.chernakov.sampler.widget.text.TextView
 
 class ToggleListItem
@@ -19,7 +19,8 @@ class ToggleListItem
 ) : FrameLayout(context, attrs, defStyleAttr) {
     private val toggleListRoot by bind<ConstraintContainer>(R.id.toggle_list_item_root)
     private val toggleListTitle by bind<TextView>(R.id.toggle_list_item_title)
-    private val toggleListSubtitle by bind<TextView>(R.id.toggle_list_item_subtitle)
+    private val toggleListLabel by bind<TextView>(R.id.toggle_list_item_label)
+    private val toggleListCaption by bind<TextView>(R.id.toggle_list_item_caption)
     private val toggleListSwitch by bind<SwitchButton>(R.id.toggle_list_item_switch)
 
     var checkedChangeListener: ((View?, Boolean) -> Unit)? = null
@@ -38,14 +39,21 @@ class ToggleListItem
         set(value) {
             field = value
             toggleListTitle.text = value ?: ""
-            toggleListTitle.isVisible = value != null
+            toggleListTitle.isVisible = !value.isNullOrEmpty()
         }
 
-    var subtitle: String? = null
+    var label: String? = null
         set(value) {
             field = value
-            toggleListSubtitle.text = value ?: ""
-            toggleListSubtitle.isVisible = value != null
+            toggleListLabel.text = value ?: ""
+            toggleListLabel.isVisible = !value.isNullOrEmpty()
+        }
+
+    var caption: String? = null
+        set(value) {
+            field = value
+            toggleListCaption.text = value ?: ""
+            toggleListCaption.isVisible = !value.isNullOrEmpty()
         }
 
     var isChecked = false
@@ -64,7 +72,8 @@ class ToggleListItem
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.ToggleListItem)
         try {
             title = typedArray.getString(R.styleable.ToggleListItem_title)
-            subtitle = typedArray.getString(R.styleable.ToggleListItem_subtitle)
+            label = typedArray.getString(R.styleable.ToggleListItem_label)
+            caption = typedArray.getString(R.styleable.ToggleListItem_caption)
             isChecked = typedArray.getBoolean(R.styleable.ToggleListItem_isChecked, isChecked)
         } finally {
             typedArray.recycle()

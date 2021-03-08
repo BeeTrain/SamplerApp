@@ -34,7 +34,9 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
         }
 
         themeModeItem.apply {
-            title = getString(R.string.title_settings_app_theme)
+            title = "Theme"
+            label = getString(R.string.title_settings_app_theme)
+            caption = "Select app theme"
             checkedChangeListener = { _, isChecked ->
                 viewModel.switchAppTheme(isChecked)
             }

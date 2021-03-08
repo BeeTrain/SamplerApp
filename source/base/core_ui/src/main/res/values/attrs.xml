@@ -22,7 +22,8 @@
 
     <declare-styleable name="ToggleListItem">
         <attr name="title" format="string" />
-        <attr name="subtitle" format="string" />
+        <attr name="label" format="string" />
+        <attr name="caption" format="string" />
         <attr name="isChecked" format="boolean" />
     </declare-styleable>
 

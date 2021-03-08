@@ -1,46 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ru.chernakov.sampler.widget.container.ConstraintContainer
+<ru.chernakov.sampler.widget.card.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/toggle_list_item_root"
+    android:id="@+id/toggle_list_item_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingStart="@dimen/keyline_4"
-    android:paddingTop="@dimen/keyline_1"
-    android:paddingEnd="@dimen/keyline_4"
-    android:paddingBottom="@dimen/keyline_1">
+    app:cardElevation="0dp">
 
-    <ru.chernakov.sampler.widget.text.TextView
-        android:id="@+id/toggle_list_item_title"
-        android:layout_width="0dp"
+    <ru.chernakov.sampler.widget.container.constraint.ConstraintContainer
+        android:id="@+id/toggle_list_item_root"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceBody1"
-        android:textColor="?attr/colorOnBackground"
-        app:layout_constraintBottom_toTopOf="@+id/toggle_list_item_subtitle"
-        app:layout_constraintEnd_toStartOf="@id/toggle_list_item_switch"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Enable dark theme" />
+        android:paddingStart="@dimen/keyline_4"
+        android:paddingTop="@dimen/keyline_1"
+        android:paddingEnd="@dimen/keyline_4"
+        android:paddingBottom="@dimen/keyline_1">
 
-    <ru.chernakov.sampler.widget.text.TextView
-        android:id="@+id/toggle_list_item_subtitle"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:textAppearance="?attr/textAppearanceSubtitle1"
-        android:textColor="?attr/colorHint"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/toggle_list_item_switch"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toggle_list_item_title"
-        tools:text="Enables and applies dark theme instantly" />
+        <ru.chernakov.sampler.widget.text.TextView
+            android:id="@+id/toggle_list_item_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceCaption"
+            android:textColor="?attr/colorOnBackground"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/toggle_list_item_title_barrier"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="visible" />
 
-    <ru.chernakov.sampler.widget.button.SwitchButton
-        android:id="@+id/toggle_list_item_switch"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <ru.chernakov.sampler.widget.container.constraint.Barrier
+            android:id="@id/toggle_list_item_title_barrier"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:barrierDirection="top"
+            app:constraint_referenced_ids="toggle_list_item_label, toggle_list_item_switch" />
 
-</ru.chernakov.sampler.widget.container.ConstraintContainer>
+        <ru.chernakov.sampler.widget.text.TextView
+            android:id="@+id/toggle_list_item_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBody1"
+            android:textColor="?attr/colorOnBackground"
+            app:layout_constraintBottom_toTopOf="@+id/toggle_list_item_caption"
+            app:layout_constraintEnd_toStartOf="@+id/toggle_list_item_switch"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toggle_list_item_title_barrier"
+            tools:text="Enable dark theme" />
+
+        <ru.chernakov.sampler.widget.text.TextView
+            android:id="@+id/toggle_list_item_caption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="?attr/colorHint"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/toggle_list_item_switch"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toggle_list_item_label"
+            tools:text="Enables and applies dark theme instantly"
+            tools:visibility="visible" />
+
+        <ru.chernakov.sampler.widget.button.SwitchButton
+            android:id="@+id/toggle_list_item_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@id/toggle_list_item_caption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toggle_list_item_title_barrier" />
+
+    </ru.chernakov.sampler.widget.container.constraint.ConstraintContainer>
+
+</ru.chernakov.sampler.widget.card.CardView>

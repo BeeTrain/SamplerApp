@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ru.chernakov.sampler.widget.container.ConstraintContainer
+<ru.chernakov.sampler.widget.container.constraint.ConstraintContainer
     android:id="@+id/root_container"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -21,4 +21,4 @@
         app:navGraph="@navigation/application_graph"
         tools:ignore="FragmentTagUsage" />
 
-</ru.chernakov.sampler.widget.container.ConstraintContainer>
+</ru.chernakov.sampler.widget.container.constraint.ConstraintContainer>

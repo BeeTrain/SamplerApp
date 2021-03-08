@@ -16,8 +16,8 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
     private val navigator: SettingsNavigator by inject()
     override val viewModel: SettingsViewModel by viewModel()
 
-    private val themeModeItem by findView<ToggleListItem>(R.id.settings_dark_theme_item)
     private val toolbar by findView<Toolbar>(R.id.settings_toolbar)
+    private val themeModeItem by findView<ToggleListItem>(R.id.settings_dark_theme_item)
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

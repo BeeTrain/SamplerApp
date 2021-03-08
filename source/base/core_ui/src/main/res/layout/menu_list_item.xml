@@ -3,23 +3,23 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/toggle_list_item_card"
+    android:id="@+id/menu_list_item_card"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:cardElevation="0dp">
 
     <ru.chernakov.sampler.widget.container.constraint.ConstraintContainer
-        android:id="@+id/toggle_list_item_root"
+        android:id="@+id/menu_list_item_root"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:paddingStart="@dimen/keyline_4"
         android:paddingTop="@dimen/keyline_2"
         android:paddingEnd="@dimen/keyline_4"
-        android:paddingBottom="@dimen/keyline_2"
+        android:paddingBottom="@dimen/keyline_4"
         tools:background="@color/grey_600">
 
         <ru.chernakov.sampler.widget.image.ImageView
-            android:id="@+id/toggle_list_item_icon"
+            android:id="@+id/menu_list_item_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/keyline_4"
@@ -28,22 +28,22 @@
             android:maxHeight="40dp"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/toggle_list_item_icon_barrier"
+            app:layout_constraintEnd_toStartOf="@id/menu_list_item_icon_barrier"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/toggle_list_item_title"
+            app:layout_constraintTop_toTopOf="@id/menu_list_item_title"
             tools:src="@drawable/ic_sampler"
             tools:visibility="visible" />
 
         <ru.chernakov.sampler.widget.container.constraint.Barrier
-            android:id="@+id/toggle_list_item_icon_barrier"
+            android:id="@+id/menu_list_item_icon_barrier"
             android:layout_width="0dp"
             android:layout_height="0dp"
             app:barrierDirection="start"
-            app:constraint_referenced_ids="toggle_list_item_title, toggle_list_item_label, toggle_list_item_caption"
-            app:layout_constraintStart_toEndOf="@id/toggle_list_item_icon" />
+            app:constraint_referenced_ids="menu_list_item_title, menu_list_item_label, menu_list_item_caption"
+            app:layout_constraintStart_toEndOf="@id/menu_list_item_icon" />
 
         <ru.chernakov.sampler.widget.text.TextView
-            android:id="@+id/toggle_list_item_title"
+            android:id="@+id/menu_list_item_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -51,30 +51,30 @@
             android:textAppearance="?attr/textAppearanceCaption"
             android:textColor="?attr/colorOnBackground"
             android:visibility="gone"
-            app:layout_constraintBottom_toTopOf="@+id/toggle_list_item_title_barrier"
-            app:layout_constraintEnd_toStartOf="@+id/toggle_list_item_switch"
+            app:layout_constraintBottom_toTopOf="@+id/menu_list_item_title_barrier"
+            app:layout_constraintEnd_toStartOf="@+id/menu_list_item_menu"
             app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toEndOf="@id/toggle_list_item_icon_barrier"
+            app:layout_constraintStart_toEndOf="@id/menu_list_item_icon_barrier"
             app:layout_constraintTop_toTopOf="parent"
             tools:visibility="visible" />
 
         <ru.chernakov.sampler.widget.text.TextView
-            android:id="@+id/toggle_list_item_label"
+            android:id="@+id/menu_list_item_label"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
             android:maxLines="1"
             android:textAppearance="?attr/textAppearanceBody1"
             android:textColor="?attr/colorOnBackground"
-            app:layout_constraintBottom_toTopOf="@+id/toggle_list_item_caption"
-            app:layout_constraintEnd_toStartOf="@+id/toggle_list_item_switch"
+            app:layout_constraintBottom_toTopOf="@+id/menu_list_item_caption"
+            app:layout_constraintEnd_toStartOf="@+id/menu_list_item_menu"
             app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toEndOf="@id/toggle_list_item_icon_barrier"
-            app:layout_constraintTop_toBottomOf="@+id/toggle_list_item_title"
+            app:layout_constraintStart_toEndOf="@id/menu_list_item_icon_barrier"
+            app:layout_constraintTop_toBottomOf="@+id/menu_list_item_title"
             tools:text="Enable dark theme" />
 
         <ru.chernakov.sampler.widget.text.TextView
-            android:id="@+id/toggle_list_item_caption"
+            android:id="@+id/menu_list_item_caption"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:ellipsize="end"
@@ -83,20 +83,24 @@
             android:textColor="?attr/colorHint"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/toggle_list_item_switch"
+            app:layout_constraintEnd_toStartOf="@id/menu_list_item_menu"
             app:layout_constraintHorizontal_bias="0"
-            app:layout_constraintStart_toEndOf="@id/toggle_list_item_icon_barrier"
-            app:layout_constraintTop_toBottomOf="@+id/toggle_list_item_label"
+            app:layout_constraintStart_toEndOf="@id/menu_list_item_icon_barrier"
+            app:layout_constraintTop_toBottomOf="@+id/menu_list_item_label"
             tools:text="Enables and applies dark theme instantly"
             tools:visibility="visible" />
 
-        <ru.chernakov.sampler.widget.button.SwitchButton
-            android:id="@+id/toggle_list_item_switch"
+        <ru.chernakov.sampler.widget.image.ImageView
+            android:id="@+id/menu_list_item_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@id/toggle_list_item_caption"
+            android:padding="@dimen/keyline_1"
+            android:src="@drawable/ic_menu"
+            app:layout_constraintBottom_toBottomOf="@id/menu_list_item_caption"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/toggle_list_item_title_barrier" />
+            app:layout_constraintTop_toBottomOf="@id/menu_list_item_title_barrier"
+            app:layout_constraintVertical_bias="1"
+            app:tint="?attr/colorOnBackground" />
 
     </ru.chernakov.sampler.widget.container.constraint.ConstraintContainer>
 

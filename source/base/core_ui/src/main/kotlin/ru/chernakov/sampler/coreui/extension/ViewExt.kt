@@ -2,6 +2,7 @@ package ru.chernakov.sampler.coreui.extension
 
 import android.graphics.Rect
 import android.os.SystemClock
+import android.util.TypedValue
 import android.view.View
 import android.view.animation.AnimationUtils
 import androidx.annotation.AnimRes
@@ -20,8 +21,7 @@ fun View.doOnApplyWindowInsets(block: (View, insets: WindowInsetsCompat, initial
     requestApplyInsetsWhenAttached()
 }
 
-fun View.recordInitialPadding() =
-    Rect(this.paddingLeft, this.paddingTop, this.paddingRight, this.paddingBottom)
+fun View.recordInitialPadding() = Rect(this.paddingLeft, this.paddingTop, this.paddingRight, this.paddingBottom)
 
 private fun View.requestApplyInsetsWhenAttached() {
     if (isAttachedToWindow) {
@@ -53,6 +53,29 @@ fun View.setOnClickWithDelayListener(delayMs: Long = DEFAULT_TIME_OUT, action: (
         setOnClickListener(null)
         false
     }
+}
+
+fun View.setClickableExt(clickable: Boolean) {
+    this.apply {
+        isClickable = clickable
+        isFocusable = clickable
+
+        if (clickable) {
+            addRipple()
+        } else {
+            setBackgroundResource(0)
+        }
+    }
+}
+
+fun View.addRipple() = with(TypedValue()) {
+    context.theme.resolveAttribute(android.R.attr.selectableItemBackground, this, true)
+    setBackgroundResource(resourceId)
+}
+
+fun View.addCircleRipple() = with(TypedValue()) {
+    context.theme.resolveAttribute(android.R.attr.selectableItemBackgroundBorderless, this, true)
+    setBackgroundResource(resourceId)
 }
 
 private fun getOnClickWithDelayListener(delayMs: Long, action: (View) -> Unit): View.OnClickListener {

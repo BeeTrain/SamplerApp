@@ -6,10 +6,12 @@ import KotlinDependencies
 import MiscDependencies
 import SourceSets
 import com.android.build.gradle.BaseExtension
+import extensions.lintChecks
 import extensions.setupQualityTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.kotlin.dsl.project
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -55,6 +57,7 @@ class ModulePlugin : Plugin<Project> {
 }
 
 fun DependencyHandler.setupDefaultModuleDependencies() {
+    lintChecks(project(ApplicationConfig.Modules.LINT.path))
     MiscDependencies.timber(this)
     KotlinDependencies.defaultModuleLibs(this)
 }

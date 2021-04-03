@@ -26,7 +26,7 @@ object BuildPlugins {
 
 object KotlinDependencies {
     object Versions {
-        const val kotlinVersion = "1.4.30"
+        const val kotlinVersion = "1.4.32"
         const val kotlinCoroutines = "1.3.4"
     }
 
@@ -72,7 +72,7 @@ object AndroidXDependencies {
         const val material = "1.3.0"
         const val constraintLayout = "2.0.4"
         const val lifecycle = "2.2.0"
-        const val navigation = "2.3.3"
+        const val navigation = "2.3.4"
         const val recyclerView = "1.1.0"
     }
 
@@ -135,7 +135,7 @@ object DIDependencies {
 object MiscDependencies {
     object Versions {
         const val timber = "4.7.1"
-        const val lottie = "3.6.1"
+        const val lottie = "3.7.0"
     }
 
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"

@@ -12,9 +12,9 @@ repositories {
     maven("https://plugins.gradle.org/m2/")
 }
 
-val kotlinVersion = "1.4.30"
-val buildToolsVersion = "4.1.2"
-val navigationVersion = "2.3.2"
+val kotlinVersion = "1.4.32"
+val buildToolsVersion = "4.1.3"
+val navigationVersion = "2.3.4"
 val ktlintVersion = "9.4.1"
 val detektVersion = "1.14.2"
 val dependenciesVersion = "0.36.0"

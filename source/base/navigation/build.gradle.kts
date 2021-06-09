@@ -1,3 +1,4 @@
+import AndroidXDependencies.navigation
 import config.setupDefaultModuleDependencies
 import extensions.featureModulesDirectory
 import extensions.isGradleProjectDir
@@ -19,6 +20,6 @@ dependencies {
         }
     }
 
-    AndroidXDependencies.navigation(this)
+    navigation()
     DIDependencies.all(this)
 }

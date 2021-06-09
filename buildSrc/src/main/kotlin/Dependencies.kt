@@ -14,7 +14,6 @@ object BuildPlugins {
     const val kotlin = "kotlin"
     const val kotlinAndroid = "kotlin-android"
     const val androidModule = "android-module"
-    const val kotlinKapt = "kotlin-kapt"
     const val kotlinJVM = "org.jetbrains.kotlin.jvm"
 
     const val navigation = "androidx.navigation.safeargs.kotlin"
@@ -26,8 +25,8 @@ object BuildPlugins {
 
 object KotlinDependencies {
     object Versions {
-        const val kotlinVersion = "1.4.32"
-        const val kotlinCoroutines = "1.3.4"
+        const val kotlinVersion = "1.5.10"
+        const val kotlinCoroutines = "1.5.0"
     }
 
     const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlinVersion}"
@@ -35,19 +34,19 @@ object KotlinDependencies {
     const val coroutinesAndroid = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.kotlinCoroutines}"
     const val coroutinesTest = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.kotlinCoroutines}"
 
-    fun defaultModuleLibs(dependencies: DependencyHandler) = dependencies.apply {
+    fun DependencyHandler.defaultModuleLibs() = apply {
         implementation(stdLib)
     }
 
-    fun coroutines(dependencies: DependencyHandler) = dependencies.apply {
+    fun DependencyHandler.coroutines() = apply {
         implementation(coroutinesCore)
         implementation(coroutinesAndroid)
         implementation(coroutinesTest)
     }
 
     fun all(dependencies: DependencyHandler) = dependencies.apply {
-        defaultModuleLibs(this)
-        coroutines(this)
+        defaultModuleLibs()
+        coroutines()
     }
 }
 
@@ -67,13 +66,13 @@ object LintDependencies {
 
 object AndroidXDependencies {
     object Versions {
-        const val appCompat = "1.2.0"
-        const val core = "1.3.2"
+        const val appCompat = "1.3.0"
+        const val core = "1.5.0"
         const val material = "1.3.0"
         const val constraintLayout = "2.0.4"
-        const val lifecycle = "2.2.0"
-        const val navigation = "2.3.4"
-        const val recyclerView = "1.1.0"
+        const val lifecycle = "2.3.1"
+        const val navigation = "2.3.5"
+        const val recyclerView = "1.2.1"
     }
 
     const val coreKtx = "androidx.core:core-ktx:${Versions.core}"
@@ -86,49 +85,43 @@ object AndroidXDependencies {
     const val navigationFragment = "androidx.navigation:navigation-fragment-ktx:${Versions.navigation}"
     const val navigationUi = "androidx.navigation:navigation-ui-ktx:${Versions.navigation}"
 
-    fun core(dependencies: DependencyHandler) = dependencies.apply {
+    fun DependencyHandler.core() = apply {
         implementation(coreKtx)
     }
 
-    fun ui(dependencies: DependencyHandler) = dependencies.apply {
-        core(this)
+    fun DependencyHandler.ui() = apply {
+        core()
         implementation(appCompat)
         implementation(material)
         implementation(recyclerView)
         implementation(constraintLayout)
     }
 
-    fun navigation(dependencies: DependencyHandler) = dependencies.apply {
+    fun DependencyHandler.navigation() = apply {
         implementation(navigationFragment)
         implementation(navigationUi)
     }
 
     fun all(dependencies: DependencyHandler) = dependencies.apply {
-        ui(this)
-        navigation(this)
+        ui()
+        navigation()
         implementation(lifecycle)
     }
 }
 
 object DIDependencies {
     object Versions {
-        const val koinVersion = "2.2.2"
+        const val koinVersion = "3.0.2"
     }
 
-    const val core = "org.koin:koin-core:${Versions.koinVersion}"
-    const val ext = "org.koin:koin-core-ext:${Versions.koinVersion}"
-    const val android = "org.koin:koin-android:${Versions.koinVersion}"
-    const val viewModel = "org.koin:koin-androidx-viewmodel:${Versions.koinVersion}"
-    const val scope = "org.koin:koin-androidx-scope:${Versions.koinVersion}"
-    const val test = "org.koin:koin-test:${Versions.koinVersion}"
+    const val core = "io.insert-koin:koin-core:${Versions.koinVersion}"
+    const val ext = "io.insert-koin:koin-core-ext:${Versions.koinVersion}"
+    const val android = "io.insert-koin:koin-android:${Versions.koinVersion}"
 
     fun all(dependencies: DependencyHandler) = dependencies.apply {
         implementation(core)
         implementation(ext)
         implementation(android)
-        implementation(viewModel)
-        implementation(scope)
-        implementation(test)
     }
 }
 
@@ -141,16 +134,16 @@ object MiscDependencies {
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
     const val lottie = "com.airbnb.android:lottie:${Versions.lottie}"
 
-    fun timber(dependencies: DependencyHandler) = dependencies.apply {
+    fun DependencyHandler.timber() = apply {
         implementation(timber)
     }
 
-    fun lottie(dependencies: DependencyHandler) = dependencies.apply {
+    fun DependencyHandler.lottie() = apply {
         implementation(lottie)
     }
 
     fun all(dependencies: DependencyHandler) = dependencies.apply {
-        timber(this)
-        lottie(this)
+        timber()
+        lottie()
     }
 }

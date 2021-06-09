@@ -8,16 +8,15 @@ plugins {
 repositories {
     google()
     mavenCentral()
-    jcenter()
     maven("https://plugins.gradle.org/m2/")
 }
 
-val kotlinVersion = "1.4.32"
-val buildToolsVersion = "4.1.3"
-val navigationVersion = "2.3.4"
-val ktlintVersion = "9.4.1"
-val detektVersion = "1.14.2"
-val dependenciesVersion = "0.36.0"
+val kotlinVersion = "1.5.10"
+val buildToolsVersion = "4.2.0"
+val navigationVersion = "2.3.5"
+val ktlintVersion = "10.1.0"
+val detektVersion = "1.17.1"
+val dependenciesVersion = "0.39.0"
 
 dependencies {
     compileOnly(gradleApi())

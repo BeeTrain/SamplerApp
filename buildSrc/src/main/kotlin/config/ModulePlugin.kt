@@ -2,8 +2,8 @@ package config
 
 import ApplicationConfig
 import BuildTypes
-import KotlinDependencies
-import MiscDependencies
+import KotlinDependencies.defaultModuleLibs
+import MiscDependencies.timber
 import SourceSets
 import com.android.build.gradle.BaseExtension
 import extensions.lintChecks
@@ -11,6 +11,7 @@ import extensions.setupQualityTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.artifacts.dsl.DependencyHandler
+import org.gradle.kotlin.dsl.exclude
 import org.gradle.kotlin.dsl.project
 import org.gradle.kotlin.dsl.withType
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
@@ -45,6 +46,12 @@ class ModulePlugin : Plugin<Project> {
                     sourceCompatibility = ApplicationConfig.javaVersion
                     targetCompatibility = ApplicationConfig.javaVersion
                 }
+
+                configurations.all {
+                    resolutionStrategy {
+                        exclude("org.jetbrains.kotlinx", "kotlinx-coroutines-debug")
+                    }
+                }
             }
 
             tasks.withType<KotlinCompile> {
@@ -58,6 +65,6 @@ class ModulePlugin : Plugin<Project> {
 
 fun DependencyHandler.setupDefaultModuleDependencies() {
     lintChecks(project(ApplicationConfig.Modules.LINT.path))
-    MiscDependencies.timber(this)
-    KotlinDependencies.defaultModuleLibs(this)
+    timber()
+    defaultModuleLibs()
 }

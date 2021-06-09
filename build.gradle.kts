@@ -3,14 +3,14 @@ import io.gitlab.arturbosch.detekt.detekt
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 }
 
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     apply {

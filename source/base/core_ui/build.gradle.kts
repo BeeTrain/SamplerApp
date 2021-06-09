@@ -1,3 +1,4 @@
+import MiscDependencies.lottie
 import config.setupDefaultModuleDependencies
 
 plugins {
@@ -9,5 +10,5 @@ plugins {
 dependencies {
     setupDefaultModuleDependencies()
     AndroidXDependencies.all(this)
-    MiscDependencies.lottie(this)
+    lottie()
 }

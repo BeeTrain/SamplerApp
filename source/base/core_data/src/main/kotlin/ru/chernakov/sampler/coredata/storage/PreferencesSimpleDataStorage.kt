@@ -1,10 +1,10 @@
-package ru.chernakov.sampler.coredata.prefs
+package ru.chernakov.sampler.coredata.storage
 
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 
-class AppSharedPreferences(applicationContext: Context) : SharedPreferencesApi {
+class PreferencesSimpleDataStorage(applicationContext: Context) : SimpleDataStorage {
 
     private val preferences = applicationContext.getSharedPreferences(PREFS_FILE_NAME, MODE_PRIVATE)
 
@@ -109,6 +109,6 @@ class AppSharedPreferences(applicationContext: Context) : SharedPreferencesApi {
 
     companion object {
         private const val NULL_VALUE_MESSAGE = "returned value is null"
-        private const val PREFS_FILE_NAME = "SamplerApp-SharedPreferences"
+        private const val PREFS_FILE_NAME = "SamplerApp-SimpleDataStorage"
     }
 }

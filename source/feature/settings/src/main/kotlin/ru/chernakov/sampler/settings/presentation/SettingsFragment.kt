@@ -8,7 +8,6 @@ import ru.chernakov.sampler.coreui.extension.findView
 import ru.chernakov.sampler.coreui.presentation.fragment.BaseFragment
 import ru.chernakov.sampler.settings.R
 import ru.chernakov.sampler.settings.app.SettingsNavigator
-import ru.chernakov.sampler.settings.domain.model.AppTheme
 import ru.chernakov.sampler.widget.appbar.Toolbar
 import ru.chernakov.sampler.widget.list.ToggleListItem
 
@@ -24,7 +23,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
 
         with(viewModel) {
             appThemeLiveData.observe(viewLifecycleOwner) { theme ->
-                themeModeItem.isChecked = theme == AppTheme.DARK
+                themeModeItem.isChecked = theme == ru.chernakov.sampler.apptheme.api.model.AppTheme.DARK
             }
         }
 

@@ -1,7 +1,6 @@
 package ru.chernakov.sampler.presentation.application
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.view.updatePadding
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -13,7 +12,6 @@ import ru.chernakov.sampler.coreui.extension.doOnApplyWindowInsets
 import ru.chernakov.sampler.coreui.extension.pxToDp
 import ru.chernakov.sampler.coreui.presentation.activity.BaseActivity
 import ru.chernakov.sampler.navigation.navigator.AppNavigator
-import ru.chernakov.sampler.settings.domain.model.AppTheme
 import ru.chernakov.sampler.widget.container.constraint.ConstraintContainer
 
 class ApplicationActivity : BaseActivity(R.layout.activity_application) {
@@ -39,11 +37,6 @@ class ApplicationActivity : BaseActivity(R.layout.activity_application) {
             insets.consumeSystemWindowInsets()
         }
 
-        with(viewModel) {
-            appThemeLiveData.observe(this@ApplicationActivity) { theme ->
-                applyTheme(theme)
-            }
-        }
         navController = findNavController(R.id.application_nav_host)
     }
 
@@ -55,12 +48,5 @@ class ApplicationActivity : BaseActivity(R.layout.activity_application) {
     override fun onStop() {
         super.onStop()
         navigator.unbindAppController()
-    }
-
-    private fun applyTheme(theme: AppTheme) {
-        delegate.localNightMode = when (theme) {
-            AppTheme.DARK -> AppCompatDelegate.MODE_NIGHT_YES
-            else -> AppCompatDelegate.MODE_NIGHT_NO
-        }
     }
 }

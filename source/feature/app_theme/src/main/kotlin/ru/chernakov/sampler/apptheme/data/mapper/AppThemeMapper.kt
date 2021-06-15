@@ -1,11 +1,11 @@
-package ru.chernakov.sampler.settings.data.mapper
+package ru.chernakov.sampler.apptheme.data.mapper
 
 import androidx.appcompat.app.AppCompatDelegate
-import ru.chernakov.sampler.settings.domain.model.AppTheme
+import ru.chernakov.sampler.apptheme.api.model.AppTheme
 
 class AppThemeMapper {
 
-    fun mapToInternal(appTheme: AppTheme): Int {
+    fun mapToAppCompatTheme(appTheme: AppTheme): Int {
         return when (appTheme) {
             AppTheme.LIGHT -> AppCompatDelegate.MODE_NIGHT_NO
             AppTheme.DARK -> AppCompatDelegate.MODE_NIGHT_YES

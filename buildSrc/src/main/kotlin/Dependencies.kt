@@ -13,6 +13,7 @@ object BuildPlugins {
 
     const val kotlin = "kotlin"
     const val kotlinAndroid = "kotlin-android"
+    const val kotlinKapt = "kotlin-kapt"
     const val androidModule = "android-module"
     const val kotlinJVM = "org.jetbrains.kotlin.jvm"
 

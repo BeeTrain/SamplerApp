@@ -17,10 +17,6 @@ abstract class BaseFragment(@LayoutRes contentLayoutId: Int) : Fragment(contentL
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         isAfterOnSavedState = false
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
         viewModel?.let {
             setupErrorHandling(it.error)
             setupLoading(it.loading)
@@ -59,5 +55,6 @@ abstract class BaseFragment(@LayoutRes contentLayoutId: Int) : Fragment(contentL
     }
 
     protected open fun createLoadingObserver(): Observer<Boolean?> = LoadingObserver(null)
+
     protected open fun createErrorObserver(): Observer<Throwable?>? = null
 }

@@ -1,6 +1,7 @@
 package ru.chernakov.sampler.app.di
 
 import org.koin.dsl.module
+import ru.chernakov.sampler.apptheme.app.di.appThemeModule
 import ru.chernakov.sampler.coredata.app.di.dataModule
 import ru.chernakov.sampler.main.app.di.mainModule
 import ru.chernakov.sampler.mainprofile.app.di.profileModule
@@ -15,6 +16,7 @@ object ApplicationModule {
 
     val modules = listOf(
         applicationModule,
+        appThemeModule,
         dataModule,
         navigationModule,
         appModule,

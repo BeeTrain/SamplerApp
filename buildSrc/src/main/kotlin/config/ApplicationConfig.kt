@@ -13,6 +13,7 @@ object ApplicationConfig {
 
     enum class Modules(val path: String) {
         APP(":app"),
+        APP_THEME(":app_theme"),
 
         CORE(":core"),
         CORE_DATA(":core_data"),

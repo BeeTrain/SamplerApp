@@ -5,7 +5,6 @@ plugins {
 }
 
 dependencies {
-    implementation(project(ApplicationConfig.Modules.APP_THEME.path))
     implementation(project(ApplicationConfig.Modules.CORE_UI.path))
     implementation(project(ApplicationConfig.Modules.CORE_DATA.path))
     setupDefaultModuleDependencies()

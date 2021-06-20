@@ -28,9 +28,11 @@ class WrongWidgetUsageDetector : ResourceXmlDetector() {
         private const val CORE_UI_WIDGET_PACKAGE = "ru.chernakov.sampler.widget."
         private val ignoredTags = listOf("include", "fragment", "merge", "tag", "view", "View")
 
-        private const val DESCRIPTION = "Marks widgets that are not part of the :core_ui module."
-        private const val EXPLANATION =
-            "Use widgets only from the :core_ui module. If the module does not have a suitable widget, it must be added."
+        private const val DESCRIPTION = "Marks widgets that are not part of the :core-ui module."
+        private const val EXPLANATION = """
+            Use widgets only from the :core-ui module.
+            If the module does not have a suitable widget, it must be added.
+        """
 
         private const val ID = "WrongWidgetUsage"
         private val CATEGORY = Category.CORRECTNESS

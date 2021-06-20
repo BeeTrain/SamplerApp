@@ -2,8 +2,8 @@ package ru.chernakov.sampler.navigation.app.di
 
 import org.koin.dsl.module
 import ru.chernakov.sampler.main.app.navigation.MainNavigator
-import ru.chernakov.sampler.mainprofile.app.navigation.ProfileNavigator
-import ru.chernakov.sampler.mainservices.app.navigation.ServicesNavigator
+import ru.chernakov.sampler.main.profile.app.navigation.ProfileNavigator
+import ru.chernakov.sampler.main.services.app.navigation.ServicesNavigator
 import ru.chernakov.sampler.navigation.navigator.AppNavigator
 import ru.chernakov.sampler.navigation.navigator.ApplicationNavigator
 import ru.chernakov.sampler.settings.app.SettingsNavigator

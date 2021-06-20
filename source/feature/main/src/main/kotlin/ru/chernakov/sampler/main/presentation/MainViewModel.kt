@@ -2,8 +2,8 @@ package ru.chernakov.sampler.main.presentation
 
 import androidx.lifecycle.MutableLiveData
 import java.util.*
-import ru.chernakov.sampler.coreui.presentation.viewmodel.BaseViewModel
-import ru.chernakov.sampler.coreui.util.lifecycle.SingleLiveEvent
+import ru.chernakov.sampler.core.ui.presentation.viewmodel.BaseViewModel
+import ru.chernakov.sampler.core.ui.util.lifecycle.SingleLiveEvent
 import ru.chernakov.sampler.main.presentation.model.FeedTab
 import ru.chernakov.sampler.main.presentation.model.ProfileTab
 import ru.chernakov.sampler.main.presentation.model.ServicesTab

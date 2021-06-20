@@ -1,7 +1,7 @@
 package ru.chernakov.sampler.presentation.application
 
 import androidx.lifecycle.MutableLiveData
-import ru.chernakov.sampler.coreui.presentation.viewmodel.BaseViewModel
+import ru.chernakov.sampler.core.ui.presentation.viewmodel.BaseViewModel
 
 class ApplicationViewModel : BaseViewModel() {
     val topInsetLiveData = MutableLiveData(DEFAULT_TOP_INSET_DP)

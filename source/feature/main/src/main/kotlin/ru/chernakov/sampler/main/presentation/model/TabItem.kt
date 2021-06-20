@@ -2,9 +2,9 @@ package ru.chernakov.sampler.main.presentation.model
 
 import androidx.fragment.app.Fragment
 import ru.chernakov.sampler.main.R
-import ru.chernakov.sampler.mainfeed.presentation.FeedFlowFragment
-import ru.chernakov.sampler.mainprofile.presentation.ProfileFlowFragment
-import ru.chernakov.sampler.mainservices.presentation.ServicesFlowFragment
+import ru.chernakov.sampler.main.feed.presentation.FeedFlowFragment
+import ru.chernakov.sampler.main.profile.presentation.ProfileFlowFragment
+import ru.chernakov.sampler.main.services.presentation.ServicesFlowFragment
 
 sealed class TabItem {
     abstract fun getFragment(): Fragment

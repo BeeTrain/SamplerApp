@@ -1,8 +1,8 @@
 package ru.chernakov.sampler.splash.presentation
 
 import kotlinx.coroutines.delay
-import ru.chernakov.sampler.coreui.presentation.viewmodel.BaseViewModel
-import ru.chernakov.sampler.coreui.util.lifecycle.SingleLiveEvent
+import ru.chernakov.sampler.core.ui.presentation.viewmodel.BaseViewModel
+import ru.chernakov.sampler.core.ui.util.lifecycle.SingleLiveEvent
 
 class SplashViewModel : BaseViewModel() {
     val redirectEvent = SingleLiveEvent<Boolean>()

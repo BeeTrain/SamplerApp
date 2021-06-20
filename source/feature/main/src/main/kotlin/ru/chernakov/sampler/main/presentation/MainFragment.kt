@@ -8,9 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import ru.chernakov.sampler.coreui.extension.findView
-import ru.chernakov.sampler.coreui.extension.observeSafe
-import ru.chernakov.sampler.coreui.presentation.fragment.BaseFragment
+import ru.chernakov.sampler.core.ui.extension.findView
+import ru.chernakov.sampler.core.ui.extension.observeSafe
+import ru.chernakov.sampler.core.ui.presentation.fragment.BaseFragment
 import ru.chernakov.sampler.main.R
 import ru.chernakov.sampler.main.presentation.model.TabItem
 import ru.chernakov.sampler.widget.navigation.BottomNavBar

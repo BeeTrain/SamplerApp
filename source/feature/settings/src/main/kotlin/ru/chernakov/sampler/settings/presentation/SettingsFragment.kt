@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.View
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import ru.chernakov.sampler.coreui.extension.findView
-import ru.chernakov.sampler.coreui.presentation.fragment.BaseFragment
+import ru.chernakov.sampler.core.ui.extension.findView
+import ru.chernakov.sampler.core.ui.presentation.fragment.BaseFragment
 import ru.chernakov.sampler.settings.R
 import ru.chernakov.sampler.settings.app.SettingsNavigator
 import ru.chernakov.sampler.widget.appbar.Toolbar
@@ -23,7 +23,7 @@ class SettingsFragment : BaseFragment(R.layout.fragment_settings) {
 
         with(viewModel) {
             appThemeLiveData.observe(viewLifecycleOwner) { theme ->
-                themeModeItem.isChecked = theme == ru.chernakov.sampler.apptheme.api.model.AppTheme.DARK
+                themeModeItem.isChecked = theme == ru.chernakov.sampler.theme.api.model.AppTheme.DARK
             }
         }
 

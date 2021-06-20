@@ -1,7 +1,7 @@
 package ru.chernakov.sampler.settings.domain.interactor
 
-import ru.chernakov.sampler.apptheme.api.model.AppTheme
 import ru.chernakov.sampler.settings.domain.repository.SettingsRepository
+import ru.chernakov.sampler.theme.api.model.AppTheme
 
 class SettingsInteractor(private val settingsRepository: SettingsRepository) {
 

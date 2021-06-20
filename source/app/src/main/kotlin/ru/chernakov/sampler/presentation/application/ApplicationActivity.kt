@@ -7,10 +7,10 @@ import androidx.navigation.findNavController
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.chernakov.sampler.R
-import ru.chernakov.sampler.coreui.extension.bind
-import ru.chernakov.sampler.coreui.extension.doOnApplyWindowInsets
-import ru.chernakov.sampler.coreui.extension.pxToDp
-import ru.chernakov.sampler.coreui.presentation.activity.BaseActivity
+import ru.chernakov.sampler.core.ui.extension.bind
+import ru.chernakov.sampler.core.ui.extension.doOnApplyWindowInsets
+import ru.chernakov.sampler.core.ui.extension.pxToDp
+import ru.chernakov.sampler.core.ui.presentation.activity.BaseActivity
 import ru.chernakov.sampler.navigation.navigator.AppNavigator
 import ru.chernakov.sampler.widget.container.constraint.ConstraintContainer
 

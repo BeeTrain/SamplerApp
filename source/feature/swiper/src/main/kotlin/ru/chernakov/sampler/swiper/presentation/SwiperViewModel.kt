@@ -1,7 +1,7 @@
 package ru.chernakov.sampler.swiper.presentation
 
 import androidx.lifecycle.MutableLiveData
-import ru.chernakov.sampler.coreui.presentation.viewmodel.BaseViewModel
+import ru.chernakov.sampler.core.ui.presentation.viewmodel.BaseViewModel
 import ru.chernakov.sampler.swiper.R
 import ru.chernakov.sampler.swiper.presentation.model.SwiperCard
 import ru.chernakov.sampler.swiper.presentation.model.SwiperModel

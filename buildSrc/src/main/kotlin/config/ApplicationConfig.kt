@@ -1,7 +1,8 @@
 import org.gradle.api.JavaVersion
 
+@Suppress("unused")
 object ApplicationConfig {
-    const val applicationId = "ru.chernakov.samplerapp"
+    const val applicationId = "ru.chernakov.sampler"
 
     const val compileSdkVersion = 30
     const val minSdkVersion = 21
@@ -13,19 +14,19 @@ object ApplicationConfig {
 
     enum class Modules(val path: String) {
         APP(":app"),
-        APP_THEME(":app_theme"),
+        APP_THEME(":app-theme"),
 
         CORE(":core"),
-        CORE_DATA(":core_data"),
-        CORE_UI(":core_ui"),
-        LINT(":lint"),
+        CORE_DATA(":core-data"),
+        CORE_UI(":core-ui"),
+        LINT(":quality-lint"),
 
         SPLASH(":splash"),
         MAIN(":main"),
 
-        MAIN_FEED(":main_feed"),
-        MAIN_SERVICES(":main_services"),
-        MAIN_PROFILE(":main_profile"),
+        MAIN_FEED(":main-feed"),
+        MAIN_SERVICES(":main-services"),
+        MAIN_PROFILE(":main-profile"),
         SETTINGS(":settings"),
         SWIPER(":swiper"),
     }

@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.view.View
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
-import ru.chernakov.sampler.coreui.presentation.fragment.BaseFragment
+import ru.chernakov.sampler.core.ui.presentation.fragment.BaseFragment
 import ru.chernakov.sampler.splash.R
 import ru.chernakov.sampler.splash.app.navigation.SplashNavigator
 

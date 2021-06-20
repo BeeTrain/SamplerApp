@@ -1,10 +1,10 @@
 package ru.chernakov.sampler.settings.data.repository
 
 import androidx.lifecycle.MutableLiveData
-import ru.chernakov.sampler.apptheme.api.ThemeService
-import ru.chernakov.sampler.apptheme.api.model.AppTheme
-import ru.chernakov.sampler.coreui.extension.asLiveData
+import ru.chernakov.sampler.core.ui.extension.asLiveData
 import ru.chernakov.sampler.settings.domain.repository.SettingsRepository
+import ru.chernakov.sampler.theme.api.ThemeService
+import ru.chernakov.sampler.theme.api.model.AppTheme
 
 class AppSettingsRepository(
     private val appThemeApplier: ThemeService

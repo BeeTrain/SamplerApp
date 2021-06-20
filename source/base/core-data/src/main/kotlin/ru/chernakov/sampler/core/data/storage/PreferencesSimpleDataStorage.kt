@@ -103,10 +103,6 @@ class PreferencesSimpleDataStorage(applicationContext: Context) : SimpleDataStor
         editor.remove(key)
     }
 
-    override fun registerChangeListener(listener: SharedPreferences.OnSharedPreferenceChangeListener) {
-        preferences.registerOnSharedPreferenceChangeListener(listener)
-    }
-
     companion object {
         private const val NULL_VALUE_MESSAGE = "returned value is null"
         private const val PREFS_FILE_NAME = "SamplerApp-SimpleDataStorage"

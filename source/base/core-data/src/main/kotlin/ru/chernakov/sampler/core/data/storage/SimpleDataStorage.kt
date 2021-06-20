@@ -1,7 +1,5 @@
 package ru.chernakov.sampler.core.data.storage
 
-import android.content.SharedPreferences
-
 interface SimpleDataStorage {
 
     fun putString(key: String, value: String)
@@ -45,6 +43,4 @@ interface SimpleDataStorage {
     fun getNullableFloat(key: String): Float?
 
     fun remove(key: String)
-
-    fun registerChangeListener(listener: SharedPreferences.OnSharedPreferenceChangeListener)
 }

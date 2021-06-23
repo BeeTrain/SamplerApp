@@ -32,8 +32,8 @@ class ApplicationActivity : BaseActivity(R.layout.activity_application) {
 
             view.updatePadding(top = topInset, bottom = bottomInset)
 
-            viewModel.topInsetLiveData.postValue(pxToDp(topInset.toFloat()))
-            viewModel.bottomInsetLiveData.postValue(pxToDp(bottomInset.toFloat()))
+            viewModel.updateTopInset(pxToDp(topInset.toFloat()))
+            viewModel.updateBottomInset(pxToDp(bottomInset.toFloat()))
             insets.consumeSystemWindowInsets()
         }
 

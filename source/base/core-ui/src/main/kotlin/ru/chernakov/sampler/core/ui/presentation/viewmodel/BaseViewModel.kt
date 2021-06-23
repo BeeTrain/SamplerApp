@@ -1,53 +1,40 @@
 package ru.chernakov.sampler.core.ui.presentation.viewmodel
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.CoroutineExceptionHandler
-import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.async
+import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.launch
 
 open class BaseViewModel : ViewModel() {
-    open val error = MutableLiveData<Throwable?>()
-    open val loading = MutableLiveData<Boolean>()
+    open val error = MutableStateFlow<Throwable?>(null)
+    open val loading = MutableStateFlow(false)
 
     private fun createExceptionHandler(
-        error: MutableLiveData<Throwable?>?,
+        error: MutableStateFlow<Throwable?>?,
         exceptionBlock: ((Throwable) -> Unit)? = null
     ): CoroutineExceptionHandler {
         return CoroutineExceptionHandler { _, throwable ->
             exceptionBlock?.invoke(throwable)
-            error?.postValue(throwable)
+            error?.value = throwable
         }
     }
 
     protected fun launchLoadingErrorJob(
-        error: MutableLiveData<Throwable?>? = this.error,
-        loading: MutableLiveData<Boolean>? = this.loading,
+        error: MutableStateFlow<Throwable?>? = this.error,
+        loading: MutableStateFlow<Boolean>? = this.loading,
         onError: ((Throwable) -> Unit)? = null,
         block: suspend () -> Unit
     ): Job {
         return viewModelScope.launch(createExceptionHandler(error, onError)) {
             try {
-                error?.postValue(null)
-                loading?.postValue(true)
+                error?.value = null
+                loading?.value = true
                 block()
             } finally {
-                loading?.postValue(false)
+                loading?.value = false
             }
-        }
-    }
-
-    protected fun <T> asyncError(
-        error: MutableLiveData<Throwable?>? = this.error,
-        onError: ((Throwable) -> Unit)? = null,
-        block: suspend () -> T
-    ): Deferred<T> {
-        return viewModelScope.async(createExceptionHandler(null, onError)) {
-            error?.postValue(null)
-            block.invoke()
         }
     }
 }

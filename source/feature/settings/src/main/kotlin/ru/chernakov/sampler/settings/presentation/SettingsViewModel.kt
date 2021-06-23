@@ -5,7 +5,7 @@ import ru.chernakov.sampler.settings.domain.interactor.SettingsInteractor
 
 class SettingsViewModel(private val settingsInteractor: SettingsInteractor) : BaseViewModel() {
 
-    val appThemeLiveData = settingsInteractor.getAppThemeObserver()
+    val appThemeState = settingsInteractor.getAppThemeObserver()
 
     fun switchAppTheme(isEnabled: Boolean) {
         settingsInteractor.setNightModeEnabled(isEnabled)

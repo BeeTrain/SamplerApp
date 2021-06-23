@@ -4,7 +4,7 @@ import android.app.Application
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.context.startKoin
 import ru.chernakov.sampler.app.di.ApplicationModule
-import ru.chernakov.sampler.core.ui.util.lifecycle.LifecycleCallback
+import ru.chernakov.sampler.core.ui.lifecycle.LifecycleCallback
 import timber.log.Timber
 
 class SamplerApp : Application() {

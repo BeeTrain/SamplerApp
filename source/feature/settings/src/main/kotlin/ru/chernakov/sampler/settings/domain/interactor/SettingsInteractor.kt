@@ -5,7 +5,7 @@ import ru.chernakov.sampler.theme.api.model.AppTheme
 
 class SettingsInteractor(private val settingsRepository: SettingsRepository) {
 
-    fun getAppThemeObserver() = settingsRepository.getAppThemeLiveData()
+    fun getAppThemeObserver() = settingsRepository.getAppThemeState()
 
     fun setNightModeEnabled(isEnabled: Boolean) {
         val theme = AppTheme.DARK.takeIf { isEnabled } ?: AppTheme.LIGHT

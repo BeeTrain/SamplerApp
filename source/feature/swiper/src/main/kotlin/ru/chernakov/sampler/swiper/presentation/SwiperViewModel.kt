@@ -1,14 +1,12 @@
 package ru.chernakov.sampler.swiper.presentation
 
-import androidx.lifecycle.MutableLiveData
+import kotlinx.coroutines.flow.MutableStateFlow
 import ru.chernakov.sampler.core.ui.presentation.viewmodel.BaseViewModel
 import ru.chernakov.sampler.swiper.R
 import ru.chernakov.sampler.swiper.presentation.model.SwiperCard
 import ru.chernakov.sampler.swiper.presentation.model.SwiperModel
 
 class SwiperViewModel : BaseViewModel() {
-
-    val cardsLiveData = MutableLiveData<SwiperModel>()
 
     private val data = listOf(
         SwiperCard(R.drawable.img_geralt, R.string.name_geralt, R.string.url_geralt),
@@ -28,16 +26,18 @@ class SwiperViewModel : BaseViewModel() {
     private val bottomCard
         get() = data[(currentIndex + 1) % data.size]
 
-    init {
-        updateCards()
-    }
-
     fun swipe() {
         currentIndex += 1
         updateCards()
     }
 
+    val cardsState = MutableStateFlow(prepareCardModel())
+
     private fun updateCards() {
-        cardsLiveData.value = SwiperModel(topCard, bottomCard)
+        cardsState.value = prepareCardModel()
+    }
+
+    private fun prepareCardModel(): SwiperModel {
+        return SwiperModel(topCard, bottomCard)
     }
 }

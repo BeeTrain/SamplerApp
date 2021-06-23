@@ -1,4 +1,4 @@
-package ru.chernakov.sampler.core.ui.util.lifecycle
+package ru.chernakov.sampler.core.ui.lifecycle
 
 import android.app.Activity
 import android.app.Application

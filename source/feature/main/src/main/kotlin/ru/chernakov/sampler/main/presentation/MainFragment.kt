@@ -6,10 +6,11 @@ import android.view.View
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.lifecycleScope
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.chernakov.sampler.core.ui.extension.findView
-import ru.chernakov.sampler.core.ui.extension.observeSafe
+import ru.chernakov.sampler.core.ui.extension.observeOnCreated
 import ru.chernakov.sampler.core.ui.presentation.fragment.BaseFragment
 import ru.chernakov.sampler.main.R
 import ru.chernakov.sampler.main.presentation.model.TabItem
@@ -35,8 +36,13 @@ class MainFragment : BaseFragment(R.layout.fragment_main) {
         super.onViewCreated(view, savedInstanceState)
 
         with(viewModel) {
-            selectedTab.observeSafe(viewLifecycleOwner) { selectTab(it) }
-            popTabBackStackEvent.observeSafe(viewLifecycleOwner) { bottomNavBar.selectedItemId = it }
+            selectedTab.observeOnCreated(lifecycleScope) { tabItem ->
+                selectTab(tabItem)
+            }
+
+            popTabBackStackEvent.observeOnCreated(lifecycleScope) { tabItemId ->
+                bottomNavBar.selectedItemId = tabItemId
+            }
         }
     }
 

@@ -1,17 +1,19 @@
 package ru.chernakov.sampler.main.presentation
 
-import androidx.lifecycle.MutableLiveData
 import java.util.*
+import kotlinx.coroutines.flow.MutableStateFlow
+import ru.chernakov.sampler.core.ui.lifecycle.SingleSharedFlow
 import ru.chernakov.sampler.core.ui.presentation.viewmodel.BaseViewModel
-import ru.chernakov.sampler.core.ui.util.lifecycle.SingleLiveEvent
 import ru.chernakov.sampler.main.presentation.model.FeedTab
 import ru.chernakov.sampler.main.presentation.model.ProfileTab
 import ru.chernakov.sampler.main.presentation.model.ServicesTab
 import ru.chernakov.sampler.main.presentation.model.TabItem
 
 class MainViewModel : BaseViewModel() {
-    val selectedTab = MutableLiveData<TabItem>(getDefaultTab())
-    val popTabBackStackEvent = SingleLiveEvent<Int>()
+
+    val selectedTab = MutableStateFlow<TabItem>(getDefaultTab())
+
+    val popTabBackStackEvent = SingleSharedFlow<Int>()
 
     private val tabs: List<TabItem> = createTabs()
     private val tabStack: Deque<TabItem> = ArrayDeque()
@@ -26,7 +28,7 @@ class MainViewModel : BaseViewModel() {
         } else {
             addTabToBackStack(selectedTab.value)
         }
-        selectedTab.postValue(tabItem)
+        selectedTab.value = tabItem
         return true
     }
 
@@ -35,13 +37,13 @@ class MainViewModel : BaseViewModel() {
 
         if (tail != null) {
             needToPopBackStack = true
-            popTabBackStackEvent.postValue(tail.itemId)
+            popTabBackStackEvent.tryEmit(tail.itemId)
             return true
         }
 
         if (selectedTab.value != defaultTab) {
             needToPopBackStack = true
-            popTabBackStackEvent.postValue(defaultTab.itemId)
+            popTabBackStackEvent.tryEmit(defaultTab.itemId)
             return true
         }
 
@@ -55,7 +57,7 @@ class MainViewModel : BaseViewModel() {
         tabStack.addLast(tab)
     }
 
-    fun getSelectedItemId() = selectedTab.value?.itemId ?: getDefaultTab().itemId
+    fun getSelectedItemId() = selectedTab.value.itemId
 
     private fun createTabs(): List<TabItem> {
         return listOf(

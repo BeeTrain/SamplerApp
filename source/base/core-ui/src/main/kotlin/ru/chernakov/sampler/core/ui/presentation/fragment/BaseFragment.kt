@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.flow.StateFlow
+import ru.chernakov.sampler.core.ui.extension.observeOnCreated
 import ru.chernakov.sampler.core.ui.presentation.observer.LoadingObserver
 import ru.chernakov.sampler.core.ui.presentation.viewmodel.BaseViewModel
 
@@ -23,15 +25,19 @@ abstract class BaseFragment(@LayoutRes contentLayoutId: Int) : Fragment(contentL
         }
     }
 
-    private fun setupErrorHandling(errorLiveData: LiveData<Throwable?>) {
-        createErrorObserver()?.let {
-            errorLiveData.observe(viewLifecycleOwner, it)
+    private fun setupErrorHandling(errorState: StateFlow<Throwable?>) {
+        createErrorObserver()?.let { observer ->
+            errorState.observeOnCreated(lifecycleScope) { error ->
+                observer.onChanged(error)
+            }
         }
     }
 
-    private fun setupLoading(loadingLiveData: LiveData<Boolean>) {
-        createLoadingObserver().let {
-            loadingLiveData.observe(viewLifecycleOwner, it)
+    private fun setupLoading(loadingState: StateFlow<Boolean>) {
+        createLoadingObserver().let { observer ->
+            loadingState.observeOnCreated(lifecycleScope) {
+                observer.onChanged(it)
+            }
         }
     }
 

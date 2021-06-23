@@ -5,11 +5,12 @@ import android.view.View
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.constraintlayout.motion.widget.TransitionAdapter
 import androidx.core.view.isVisible
+import androidx.lifecycle.lifecycleScope
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.chernakov.sampler.core.ui.extension.doPostDelayed
 import ru.chernakov.sampler.core.ui.extension.findView
 import ru.chernakov.sampler.core.ui.extension.getColorExt
-import ru.chernakov.sampler.core.ui.extension.observeSafe
+import ru.chernakov.sampler.core.ui.extension.observeOnCreated
 import ru.chernakov.sampler.core.ui.extension.runFadeInAnimation
 import ru.chernakov.sampler.core.ui.presentation.fragment.BaseFragment
 import ru.chernakov.sampler.swiper.R
@@ -39,10 +40,8 @@ class SwiperFragment : BaseFragment(R.layout.fragment_swiper) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        with(viewModel) {
-            cardsLiveData.observeSafe(viewLifecycleOwner) { model ->
-                bindCards(model)
-            }
+        viewModel.cardsState.observeOnCreated(lifecycleScope) {
+            bindCards(it)
         }
 
         swiperTopCardName.setTextColor(view.context.getColorExt(R.color.white))

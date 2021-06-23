@@ -1,4 +1,4 @@
-name: Checkstyle
+name: Quality-check
 
 on: [push]
 
@@ -16,13 +16,13 @@ jobs:
               run: sudo chmod +x ./gradlew
 
             - name: KtLint
-              run: ./gradlew ktlint
+              run: ./gradlew ktlintCheck
 
             - name: Detekt
               run: ./gradlew detekt
 
-            - name: Checkstyle
-              run: ./gradlew checkstyle
+            - name: Lint
+              run: ./gradlew lint
 
             - uses: actions/upload-artifact@v2
               with:

@@ -1,5 +1,6 @@
 package ru.chernakov.sampler.core.data.storage
 
+@Suppress("TooManyFunctions")
 interface SimpleDataStorage {
 
     fun putString(key: String, value: String)

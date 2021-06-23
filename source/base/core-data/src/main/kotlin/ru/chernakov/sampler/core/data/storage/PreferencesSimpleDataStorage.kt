@@ -4,6 +4,7 @@ import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 
+@Suppress("TooManyFunctions")
 class PreferencesSimpleDataStorage(applicationContext: Context) : SimpleDataStorage {
 
     private val preferences = applicationContext.getSharedPreferences(PREFS_FILE_NAME, MODE_PRIVATE)

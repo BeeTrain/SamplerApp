@@ -39,12 +39,14 @@ class MainViewModel : BaseViewModel() {
         if (tail != null) {
             needToPopBackStack = true
             popTabBackStackEvent.tryEmit(tail.itemId)
+
             return true
         }
 
         if (selectedTab.value != defaultTab) {
             needToPopBackStack = true
             popTabBackStackEvent.tryEmit(defaultTab.itemId)
+
             return true
         }
 

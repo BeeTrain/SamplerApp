@@ -7,7 +7,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import ru.chernakov.sampler.R
 import ru.chernakov.sampler.core.ui.extension.getAttrColor
 
-
 class BottomNavBar
 @JvmOverloads constructor(
     context: Context,

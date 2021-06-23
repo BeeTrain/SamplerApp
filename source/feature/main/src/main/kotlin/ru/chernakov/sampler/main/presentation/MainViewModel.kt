@@ -1,6 +1,7 @@
 package ru.chernakov.sampler.main.presentation
 
-import java.util.*
+import java.util.ArrayDeque
+import java.util.Deque
 import kotlinx.coroutines.flow.MutableStateFlow
 import ru.chernakov.sampler.core.ui.lifecycle.SingleSharedFlow
 import ru.chernakov.sampler.core.ui.presentation.viewmodel.BaseViewModel

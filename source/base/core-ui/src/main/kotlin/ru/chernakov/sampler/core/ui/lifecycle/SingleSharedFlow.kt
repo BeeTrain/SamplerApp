@@ -36,5 +36,4 @@ class SingleSharedFlow<T> : MutableSharedFlow<T> {
     override fun resetReplayCache() = mutableSharedFlow.resetReplayCache()
 
     override fun tryEmit(value: T) = mutableSharedFlow.tryEmit(value)
-
 }

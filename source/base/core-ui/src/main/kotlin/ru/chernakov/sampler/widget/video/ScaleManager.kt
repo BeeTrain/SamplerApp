@@ -103,8 +103,8 @@ class ScaleManager(private val mViewSize: Size, private val mVideoSize: Size) {
     }
 
     private fun startInside(): Matrix {
-        return if (mVideoSize.height <= mViewSize.width
-            && mVideoSize.height <= mViewSize.height
+        return if (mVideoSize.height <= mViewSize.width &&
+            mVideoSize.height <= mViewSize.height
         ) {
             getOriginalScale(PivotPoint.LEFT_TOP)
         } else {
@@ -113,8 +113,8 @@ class ScaleManager(private val mViewSize: Size, private val mVideoSize: Size) {
     }
 
     private fun centerInside(): Matrix {
-        return if (mVideoSize.height <= mViewSize.width
-            && mVideoSize.height <= mViewSize.height
+        return if (mVideoSize.height <= mViewSize.width &&
+            mVideoSize.height <= mViewSize.height
         ) {
             getOriginalScale(PivotPoint.CENTER)
         } else {
@@ -123,8 +123,8 @@ class ScaleManager(private val mViewSize: Size, private val mVideoSize: Size) {
     }
 
     private fun endInside(): Matrix {
-        return if (mVideoSize.height <= mViewSize.width
-            && mVideoSize.height <= mViewSize.height
+        return if (mVideoSize.height <= mViewSize.width &&
+            mVideoSize.height <= mViewSize.height
         ) {
             getOriginalScale(PivotPoint.RIGHT_BOTTOM)
         } else {

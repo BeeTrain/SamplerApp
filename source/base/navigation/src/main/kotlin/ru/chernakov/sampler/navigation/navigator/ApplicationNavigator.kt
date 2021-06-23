@@ -16,8 +16,13 @@ import ru.chernakov.sampler.settings.app.SettingsNavigator
 import ru.chernakov.sampler.splash.app.navigation.SplashNavigator
 import ru.chernakov.sampler.splash.presentation.SplashFragmentDirections
 
-class ApplicationNavigator : AppNavigator,
-    SplashNavigator, MainNavigator, ProfileNavigator, SettingsNavigator, ServicesNavigator {
+class ApplicationNavigator :
+    AppNavigator,
+    SplashNavigator,
+    MainNavigator,
+    ProfileNavigator,
+    SettingsNavigator,
+    ServicesNavigator {
 
     private var appNavController: NavController? = null
 

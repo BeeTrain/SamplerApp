@@ -22,5 +22,4 @@ class AppSettingsRepository(
     }
 
     override fun getAppThemeState() = appThemeState.asStateFlow()
-
 }

@@ -90,7 +90,6 @@ class MenuListItem
             label = typedArray.getString(R.styleable.MenuListItem_label)
             caption = typedArray.getString(R.styleable.MenuListItem_caption)
             menu = typedArray.getResourceId(R.styleable.MenuListItem_menu, 0).takeIf { it != 0 }
-
         } finally {
             typedArray.recycle()
         }

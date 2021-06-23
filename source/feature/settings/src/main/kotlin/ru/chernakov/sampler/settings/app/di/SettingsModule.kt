@@ -8,7 +8,7 @@ import ru.chernakov.sampler.settings.domain.repository.SettingsRepository
 import ru.chernakov.sampler.settings.presentation.SettingsViewModel
 
 val settingsModule = module {
-    single<SettingsRepository> {AppSettingsRepository(get()) }
+    single<SettingsRepository> { AppSettingsRepository(get()) }
 
     factory { SettingsInteractor(get()) }
 

@@ -5,5 +5,6 @@ import org.koin.dsl.module
 import ru.chernakov.sampler.swiper.presentation.SwiperViewModel
 
 val swiperModule = module {
+
     viewModel { SwiperViewModel() }
 }

@@ -5,5 +5,6 @@ import org.koin.dsl.module
 import ru.chernakov.sampler.splash.presentation.SplashViewModel
 
 val splashModule = module {
+
     viewModel { SplashViewModel() }
 }

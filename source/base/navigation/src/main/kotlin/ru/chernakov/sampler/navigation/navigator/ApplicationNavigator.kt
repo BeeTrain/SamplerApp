@@ -12,7 +12,7 @@ import ru.chernakov.sampler.main.app.navigation.MainNavigator
 import ru.chernakov.sampler.main.presentation.MainFragmentDirections
 import ru.chernakov.sampler.main.profile.app.navigation.ProfileNavigator
 import ru.chernakov.sampler.main.services.app.navigation.ServicesNavigator
-import ru.chernakov.sampler.settings.app.SettingsNavigator
+import ru.chernakov.sampler.settings.app.navigation.SettingsNavigator
 import ru.chernakov.sampler.splash.app.navigation.SplashNavigator
 import ru.chernakov.sampler.splash.presentation.SplashFragmentDirections
 

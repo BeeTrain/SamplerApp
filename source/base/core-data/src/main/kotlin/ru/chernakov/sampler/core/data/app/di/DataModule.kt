@@ -5,5 +5,6 @@ import org.koin.dsl.module
 import ru.chernakov.sampler.core.data.storage.SimpleDataStorageProvider
 
 val dataModule = module {
+
     single { SimpleDataStorageProvider.provide(androidContext()) }
 }

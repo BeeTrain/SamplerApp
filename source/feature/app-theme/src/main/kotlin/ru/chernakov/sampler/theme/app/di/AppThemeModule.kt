@@ -8,7 +8,20 @@ import ru.chernakov.sampler.theme.data.mapper.AppThemeMapper
 import ru.chernakov.sampler.theme.data.repository.AppThemeStorage
 
 val appThemeModule = module {
-    single<ThemeService>(createdAtStart = true) { AppThemeApplier(get(), get()) }
-    single<ThemeStorage> { AppThemeStorage(get(), get()) }
+
+    single<ThemeService>(createdAtStart = true) {
+        AppThemeApplier(
+            appThemeStorage = get(),
+            appThemeMapper = get()
+        )
+    }
+
+    single<ThemeStorage> {
+        AppThemeStorage(
+            simpleDataStorage = get(),
+            appThemeMapper = get()
+        )
+    }
+
     factory { AppThemeMapper() }
 }

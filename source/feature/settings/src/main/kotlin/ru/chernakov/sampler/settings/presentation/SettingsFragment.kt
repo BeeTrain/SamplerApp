@@ -9,7 +9,7 @@ import ru.chernakov.sampler.core.ui.extension.findView
 import ru.chernakov.sampler.core.ui.extension.observeOnCreated
 import ru.chernakov.sampler.core.ui.presentation.fragment.BaseFragment
 import ru.chernakov.sampler.settings.R
-import ru.chernakov.sampler.settings.app.SettingsNavigator
+import ru.chernakov.sampler.settings.app.navigation.SettingsNavigator
 import ru.chernakov.sampler.theme.api.model.AppTheme
 import ru.chernakov.sampler.widget.appbar.Toolbar
 import ru.chernakov.sampler.widget.list.ToggleListItem

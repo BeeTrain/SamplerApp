@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.chernakov.sampler.widget.card.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/data_list_item_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardElevation="0dp">
+
+    <ru.chernakov.sampler.widget.container.constraint.ConstraintContainer
+        android:id="@+id/data_list_item_root"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="16dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="8dp">
+
+        <ru.chernakov.sampler.widget.image.ImageView
+            android:id="@+id/data_list_item_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/keyline_4"
+            android:adjustViewBounds="true"
+            android:maxWidth="40dp"
+            android:maxHeight="40dp"
+            android:visibility="gone"
+            tools:src="@drawable/ic_sampler"
+            tools:visibility="visible" />
+
+        <ru.chernakov.sampler.widget.text.TextView
+            android:id="@+id/data_list_item_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/data_list_item_icon"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Data List Item Title" />
+
+    </ru.chernakov.sampler.widget.container.constraint.ConstraintContainer>
+
+</ru.chernakov.sampler.widget.card.CardView>

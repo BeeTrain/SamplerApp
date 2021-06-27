@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import com.google.android.material.card.MaterialCardView
 
-class CardView
+open class CardView
 @JvmOverloads constructor(
     context: Context,
     attrs: AttributeSet? = null,

@@ -44,6 +44,11 @@
         <attr name="menu" />
     </declare-styleable>
 
+    <declare-styleable name="DataListItem">
+        <attr name="icon" />
+        <attr name="title" />
+    </declare-styleable>
+
     <declare-styleable name="ScalableVideoView">
         <attr name="scalableType">
             <enum name="none" value="0" />

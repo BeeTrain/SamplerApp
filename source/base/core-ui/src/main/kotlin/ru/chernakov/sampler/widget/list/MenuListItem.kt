@@ -3,7 +3,6 @@ package ru.chernakov.sampler.widget.list
 import android.content.Context
 import android.graphics.drawable.Drawable
 import android.util.AttributeSet
-import android.widget.FrameLayout
 import android.widget.PopupMenu
 import androidx.annotation.MenuRes
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -12,6 +11,7 @@ import androidx.core.view.updateLayoutParams
 import ru.chernakov.sampler.R
 import ru.chernakov.sampler.core.ui.extension.bind
 import ru.chernakov.sampler.core.ui.extension.setClickableExt
+import ru.chernakov.sampler.widget.card.CardView
 import ru.chernakov.sampler.widget.container.constraint.ConstraintContainer
 import ru.chernakov.sampler.widget.image.ImageView
 import ru.chernakov.sampler.widget.text.TextView
@@ -21,7 +21,7 @@ class MenuListItem
     context: Context,
     attrs: AttributeSet? = null,
     defStyleAttr: Int = 0
-) : FrameLayout(context, attrs, defStyleAttr) {
+) : CardView(context, attrs, defStyleAttr) {
     private val menuListRoot by bind<ConstraintContainer>(R.id.menu_list_item_root)
     private val menuListIcon by bind<ImageView>(R.id.menu_list_item_icon)
     private val menuListTitle by bind<TextView>(R.id.menu_list_item_title)

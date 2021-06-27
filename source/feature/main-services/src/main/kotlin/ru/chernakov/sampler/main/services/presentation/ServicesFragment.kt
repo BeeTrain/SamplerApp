@@ -2,24 +2,36 @@ package ru.chernakov.sampler.main.services.presentation
 
 import android.os.Bundle
 import android.view.View
-import org.koin.android.ext.android.inject
+import androidx.lifecycle.lifecycleScope
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import ru.chernakov.sampler.core.ui.extension.findView
-import ru.chernakov.sampler.core.ui.extension.setOnClickWithDelayListener
+import ru.chernakov.sampler.core.ui.extension.observeOnCreated
 import ru.chernakov.sampler.core.ui.presentation.fragment.BaseFragment
-import ru.chernakov.sampler.core.ui.presentation.viewmodel.BaseViewModel
 import ru.chernakov.sampler.main.services.R
-import ru.chernakov.sampler.main.services.app.navigation.ServicesNavigator
-import ru.chernakov.sampler.widget.text.TextView
+import ru.chernakov.sampler.main.services.presentation.adapter.ServicesAdapter
+import ru.chernakov.sampler.main.services.presentation.model.Service
+import ru.chernakov.sampler.widget.list.RecyclerView
 
 class ServicesFragment : BaseFragment(R.layout.fragment_services) {
-    private val navigator: ServicesNavigator by inject()
-    override val viewModel = BaseViewModel()
+    override val viewModel: ServicesViewModel by viewModel()
 
-    private val servicesSwiperButton by findView<TextView>(R.id.services_swiper_button)
+    private val servicesRecyclerView by findView<RecyclerView>(R.id.services_recycler_view)
+
+    private val adapter by lazy { ServicesAdapter(onListItemClick) }
+
+    private val onListItemClick: ((Service) -> Unit) = { viewModel.onServiceSelected(it) }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        servicesSwiperButton.setOnClickWithDelayListener { navigator.fromServicesToSwiper() }
+        viewModel.servicesState.observeOnCreated(lifecycleScope) {
+            populateList(it)
+        }
+
+        servicesRecyclerView.adapter = adapter
+    }
+
+    private fun populateList(services: List<Service>) {
+        adapter.populate(services)
     }
 }

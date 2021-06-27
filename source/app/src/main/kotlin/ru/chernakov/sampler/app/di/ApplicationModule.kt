@@ -4,6 +4,7 @@ import org.koin.dsl.module
 import ru.chernakov.sampler.core.data.app.di.dataModule
 import ru.chernakov.sampler.main.app.di.mainModule
 import ru.chernakov.sampler.main.profile.app.di.profileModule
+import ru.chernakov.sampler.main.services.app.di.servicesModule
 import ru.chernakov.sampler.navigation.app.di.navigationModule
 import ru.chernakov.sampler.settings.app.di.settingsModule
 import ru.chernakov.sampler.splash.app.di.splashModule
@@ -22,6 +23,7 @@ object ApplicationModule {
         appModule,
         splashModule,
         mainModule,
+        servicesModule,
         profileModule,
         settingsModule,
         swiperModule

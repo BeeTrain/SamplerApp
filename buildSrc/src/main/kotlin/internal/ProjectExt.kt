@@ -55,9 +55,6 @@ internal fun Project.setupDependencyUpdatesTask() = apply {
     }
 }
 
-internal val Project.featureModulesDirectory
-    get() = "$rootDir/source/feature"
-
 internal val Project.baseModulesDirectory
     get() = "$rootDir/source/base"
 

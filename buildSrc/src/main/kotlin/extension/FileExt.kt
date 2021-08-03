@@ -1,6 +1,6 @@
-package internal
+package extension
 
 import java.io.File
 
-internal val File.isGradleProjectDir
+val File.isGradleProjectDir
     get() = listFiles()?.any { it.name == "build.gradle" || it.name == "build.gradle.kts" } ?: false

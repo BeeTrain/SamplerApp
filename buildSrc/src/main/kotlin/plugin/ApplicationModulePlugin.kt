@@ -8,13 +8,13 @@ import KotlinDependencies
 import MiscDependencies
 import Plugins
 import SourceSets
+import extension.featureModulesDirectory
+import extension.isGradleProjectDir
 import internal.applicationExtension
 import internal.baseModulesDirectory
-import internal.featureModulesDirectory
 import internal.getGitVersionCode
 import internal.getGitVersionName
 import internal.implementation
-import internal.isGradleProjectDir
 import internal.lintChecks
 import internal.setupDependencyUpdatesTask
 import internal.setupQualityTask

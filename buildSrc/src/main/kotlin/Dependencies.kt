@@ -1,20 +1,22 @@
-import extensions.compileOnly
-import extensions.implementation
+import internal.compileOnly
+import internal.implementation
 import org.gradle.api.JavaVersion
 import org.gradle.api.artifacts.dsl.DependencyHandler
 
 val javaVersion = JavaVersion.VERSION_1_8
 
-object BuildPlugins {
+object Plugins {
+    const val applicationModule = "application-module"
+    const val androidModule = "android-module"
+    const val kotlinModule = "kotlin-module"
+
     const val androidApplication = "com.android.application"
     const val androidLibrary = "com.android.library"
+    const val androidKotlin = "kotlin-android"
 
     const val javaLibrary = "java-library"
-
     const val kotlin = "kotlin"
-    const val kotlinAndroid = "kotlin-android"
     const val kotlinKapt = "kotlin-kapt"
-    const val androidModule = "android-module"
     const val kotlinJVM = "org.jetbrains.kotlin.jvm"
 
     const val navigation = "androidx.navigation.safeargs.kotlin"
@@ -26,7 +28,7 @@ object BuildPlugins {
 
 object KotlinDependencies {
     object Versions {
-        const val kotlinVersion = "1.5.10"
+        const val kotlinVersion = "1.5.21"
         const val kotlinCoroutines = "1.5.0"
     }
 

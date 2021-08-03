@@ -1,4 +1,4 @@
-package extensions
+package internal
 
 import org.gradle.api.Action
 import org.gradle.api.artifacts.Dependency

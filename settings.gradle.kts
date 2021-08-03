@@ -1,26 +1,35 @@
 /* Project Settings */
 
-// Attach project modules
-rootDir
-    .walk()
-    .maxDepth(5)
-    .filter {
-        it.name != "buildSrc" &&
-            it.isDirectory &&
-            it.absolutePath != rootDir.path && (
-            file("${it.absolutePath}/build.gradle.kts").exists() ||
-                file("${it.absolutePath}/build.gradle").exists()
-            )
+val moduleConfiguratorPath = "/gradle/modules-configurator.gradle.kts"
+
+// Attach modules
+apply(from = File(moduleConfiguratorPath))
+
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
     }
-    .forEach {
-        val moduleName = ":${it.name}"
-        include(moduleName)
-        project(moduleName).projectDir = file(it.path)
+}
+
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
     }
 
-// Lock dynamic dependency versions
-buildscript {
-    configurations.classpath {
-        resolutionStrategy.activateDependencyLocking()
+    resolutionStrategy {
+        eachPlugin {
+            val kotlinVersion = "1.5.21"
+            val androidGradleVersion = "7.0.0"
+
+            val pluginId = requested.id.id
+            when {
+                pluginId.startsWith("org.jetbrains.kotlin") -> useVersion(kotlinVersion)
+                pluginId.startsWith("com.android.") -> {
+                    useModule("com.android.tools.build:gradle:$androidGradleVersion")
+                }
+            }
+        }
     }
 }

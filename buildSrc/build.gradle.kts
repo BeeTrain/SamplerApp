@@ -1,8 +1,15 @@
-import org.jetbrains.kotlin.gradle.dsl.KotlinJvmCompile
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
 
 plugins {
     `java-gradle-plugin`
     `kotlin-dsl`
+    `kotlin-dsl-precompiled-script-plugins`
 }
 
 repositories {
@@ -11,8 +18,8 @@ repositories {
     maven("https://plugins.gradle.org/m2/")
 }
 
-val kotlinVersion = "1.5.10"
-val buildToolsVersion = "4.2.0"
+val kotlinVersion = "1.5.21"
+val buildToolsVersion = "7.0.0"
 val navigationVersion = "2.3.5"
 val ktlintVersion = "10.1.0"
 val detektVersion = "1.17.1"
@@ -22,7 +29,9 @@ dependencies {
     compileOnly(gradleApi())
 
     implementation("com.android.tools.build:gradle:$buildToolsVersion")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+
     implementation("androidx.navigation:navigation-safe-args-gradle-plugin:$navigationVersion")
     implementation("org.jlleitschuh.gradle:ktlint-gradle:$ktlintVersion")
     implementation("io.gitlab.arturbosch.detekt:detekt-gradle-plugin:$detektVersion")
@@ -31,13 +40,20 @@ dependencies {
 
 gradlePlugin {
     plugins {
+        register("kotlin-module") {
+            id = "kotlin-module"
+            description = "Gradle plugin for kotlin module."
+            implementationClass = "plugin.KotlinModulePlugin"
+        }
+        register("application-module") {
+            id = "application-module"
+            description = "Gradle plugin for android application module."
+            implementationClass = "plugin.ApplicationModulePlugin"
+        }
         register("android-module") {
             id = "android-module"
-            implementationClass = "config.ModulePlugin"
+            description = "Gradle plugin for android library module."
+            implementationClass = "plugin.AndroidModulePlugin"
         }
     }
-}
-
-tasks.withType(KotlinJvmCompile::class) {
-    kotlinOptions.useIR = true
 }

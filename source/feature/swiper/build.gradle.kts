@@ -1,12 +1,9 @@
-import config.setupDefaultModuleDependencies
-
 plugins {
-    id(BuildPlugins.androidModule)
+    id(Plugins.androidModule)
 }
 
 dependencies {
-    implementation(project(ApplicationConfig.Modules.CORE_UI.path))
-    setupDefaultModuleDependencies()
+    implementation(project(Config.Modules.CORE_UI.path))
 
     AndroidXDependencies.all(this)
     DIDependencies.all(this)

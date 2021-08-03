@@ -1,7 +1,5 @@
-import org.gradle.api.JavaVersion
-
 @Suppress("unused")
-object ApplicationConfig {
+object Config {
     const val applicationId = "ru.chernakov.sampler"
 
     const val compileSdkVersion = 30
@@ -9,8 +7,6 @@ object ApplicationConfig {
     const val targetSdkVersion = 30
 
     const val buildToolsVersion = "30.0.2"
-
-    val javaVersion = JavaVersion.VERSION_1_8
 
     enum class Modules(val path: String) {
         APP(":app"),
@@ -37,7 +33,6 @@ object BuildTypes {
     const val release = "release"
 }
 
-object SourceSets {
-    const val main = "main"
-    const val srcMain = "src/main/kotlin"
+enum class SourceSets(val title: String, val path: String) {
+    MAIN(title = "main", path = "src/main/kotlin")
 }

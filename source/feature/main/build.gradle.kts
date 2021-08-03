@@ -1,17 +1,14 @@
-import config.setupDefaultModuleDependencies
-
 plugins {
-    id(BuildPlugins.androidModule)
+    id(Plugins.androidModule)
 }
 
 dependencies {
-    implementation(project(ApplicationConfig.Modules.CORE_UI.path))
-    setupDefaultModuleDependencies()
+    implementation(project(Config.Modules.CORE_UI.path))
 
     // Tabs modules
-    implementation(project(ApplicationConfig.Modules.MAIN_FEED.path))
-    implementation(project(ApplicationConfig.Modules.MAIN_SERVICES.path))
-    implementation(project(ApplicationConfig.Modules.MAIN_PROFILE.path))
+    implementation(project(Config.Modules.MAIN_FEED.path))
+    implementation(project(Config.Modules.MAIN_SERVICES.path))
+    implementation(project(Config.Modules.MAIN_PROFILE.path))
 
     AndroidXDependencies.all(this)
     DIDependencies.all(this)

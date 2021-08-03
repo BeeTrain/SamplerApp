@@ -1,12 +1,10 @@
 import KotlinDependencies.coroutines
-import config.setupDefaultModuleDependencies
 
 plugins {
-    id(BuildPlugins.androidModule)
+    id(Plugins.androidModule)
 }
 
 dependencies {
-    setupDefaultModuleDependencies()
     implementation(AndroidXDependencies.appCompat)
     implementation(AndroidXDependencies.lifecycle)
     coroutines()

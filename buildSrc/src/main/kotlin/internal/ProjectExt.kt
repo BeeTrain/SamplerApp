@@ -1,13 +1,26 @@
-package extensions
+package internal
 
+import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.api.dsl.LibraryExtension
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
+import io.gitlab.arturbosch.detekt.extensions.DetektExtension
 import java.util.Locale
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
+import org.gradle.kotlin.dsl.withType
 import org.jlleitschuh.gradle.ktlint.KtlintExtension
 import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
 
-fun Project.setupQualityTask() = apply {
+internal val Project.applicationExtension: ApplicationExtension
+    get() = extensions.findByName("android") as ApplicationExtension
+
+internal val Project.libraryExtension: LibraryExtension
+    get() = extensions.findByName("android") as LibraryExtension
+
+internal fun Project.setupQualityTask() = apply {
+    configure<DetektExtension> {
+        config = files("$rootDir/config/quality/detekt-config.yml")
+    }
     configure<KtlintExtension> {
         outputToConsole.set(true)
         outputColorName.set("RED")
@@ -28,8 +41,8 @@ fun Project.setupQualityTask() = apply {
     }
 }
 
-fun Project.setupDependencyUpdatesTask() = apply {
-    tasks.named("dependencyUpdates", DependencyUpdatesTask::class.java).configure {
+internal fun Project.setupDependencyUpdatesTask() = apply {
+    tasks.withType<DependencyUpdatesTask> {
         rejectVersionIf {
             isNonStable(candidate.version)
         }
@@ -42,11 +55,11 @@ fun Project.setupDependencyUpdatesTask() = apply {
     }
 }
 
-val Project.featureModulesDirectory
-    get() = "${rootDir}/source/feature"
+internal val Project.featureModulesDirectory
+    get() = "$rootDir/source/feature"
 
-val Project.baseModulesDirectory
-    get() = "${rootDir}/source/base"
+internal val Project.baseModulesDirectory
+    get() = "$rootDir/source/base"
 
 private fun isNonStable(version: String): Boolean {
     val stableKeyword = listOf("RELEASE", "FINAL", "GA").any { version.toUpperCase(Locale.getDefault()).contains(it) }

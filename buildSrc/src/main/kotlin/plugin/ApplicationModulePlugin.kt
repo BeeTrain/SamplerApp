@@ -60,19 +60,6 @@ class ApplicationModulePlugin : Plugin<Project> {
                 versionName = getGitVersionName()
             }
 
-            lint {
-                disable(
-                    "RtlSymmetry",
-                    "RtlHardcoded",
-                    "InvalidPackage",
-                    "ParcelCreator",
-                    "AppLinkUrlError",
-                    "MissingTranslation",
-                    "DuplicatePlatformClasses",
-                    "CheckResult"
-                )
-            }
-
             buildTypes {
                 getByName(BuildTypes.debug) {
                     isMinifyEnabled = false

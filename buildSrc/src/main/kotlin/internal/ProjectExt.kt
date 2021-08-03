@@ -1,6 +1,7 @@
 package internal
 
 import com.android.build.api.dsl.ApplicationExtension
+import com.android.build.api.dsl.CommonExtension
 import com.android.build.api.dsl.LibraryExtension
 import com.github.benmanes.gradle.versions.updates.DependencyUpdatesTask
 import io.gitlab.arturbosch.detekt.extensions.DetektExtension
@@ -32,6 +33,22 @@ internal fun Project.setupQualityTask() = apply {
         filter {
             exclude("**/generated/**")
             include("**/kotlin/**")
+        }
+    }
+    val androidExtension = extensions.findByName("android") as CommonExtension<*, *, *, *>
+    androidExtension.apply {
+        lint {
+            disable(
+                "RtlSymmetry",
+                "RtlHardcoded",
+                "InvalidPackage",
+                "ParcelCreator",
+                "AppLinkUrlError",
+                "MissingTranslation",
+                "DuplicatePlatformClasses",
+                "CheckResult",
+                "Instantiatable"
+            )
         }
     }
     tasks.register("checkBeforePush").configure {

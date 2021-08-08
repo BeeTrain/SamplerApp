@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ru.chernakov.sampler.widget.container.constraint.ConstraintContainer
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ru.chernakov.sampler.widget.appbar.Toolbar
+        android:id="@+id/logbook_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:subtitle="coming soon"
+        app:title="Logbook" />
+
+    <ru.chernakov.sampler.widget.image.LottieView
+        android:id="@+id/logbook_stub_image"
+        android:layout_width="128dp"
+        android:layout_height="128dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logbook_toolbar"
+        app:lottie_autoPlay="true"
+        app:lottie_fileName="lottie/anim-developing.json" />
+
+    <ru.chernakov.sampler.widget.text.TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Screen in developing"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logbook_stub_image"
+        app:textType="Subtitle1" />
+
+</ru.chernakov.sampler.widget.container.constraint.ConstraintContainer>

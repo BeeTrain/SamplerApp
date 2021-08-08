@@ -15,6 +15,7 @@ import ru.chernakov.sampler.core.ui.extension.runFadeInAnimation
 import ru.chernakov.sampler.core.ui.presentation.fragment.BaseFragment
 import ru.chernakov.sampler.swiper.R
 import ru.chernakov.sampler.swiper.presentation.model.SwiperModel
+import ru.chernakov.sampler.widget.appbar.Toolbar
 import ru.chernakov.sampler.widget.container.FrameContainer
 import ru.chernakov.sampler.widget.container.MotionContainer
 import ru.chernakov.sampler.widget.image.ImageView
@@ -24,6 +25,8 @@ import ru.chernakov.sampler.widget.video.ScalableVideoView
 
 class SwiperFragment : BaseFragment(R.layout.fragment_swiper) {
     override val viewModel: SwiperViewModel by viewModel()
+
+    private val swiperToolbar by findView<Toolbar>(R.id.swiper_toolbar)
 
     private val swiperMotionContainer by findView<MotionContainer>(R.id.swiper_motion_container)
 
@@ -44,6 +47,7 @@ class SwiperFragment : BaseFragment(R.layout.fragment_swiper) {
             bindCards(it)
         }
 
+        swiperToolbar.setNavigationOnClickListener { activity?.onBackPressed() }
         swiperTopCardName.setTextColor(view.context.getColorExt(R.color.white))
         swiperBottomCardName.setTextColor(view.context.getColorExt(R.color.white))
 

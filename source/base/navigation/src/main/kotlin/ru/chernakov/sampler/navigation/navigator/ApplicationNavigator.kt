@@ -59,6 +59,13 @@ class ApplicationNavigator :
         )
     }
 
+    override fun fromServicesToLogbook() {
+        appNavController?.navigate(
+            action = MainFragmentDirections.actionFromMainToLogbook(),
+            navOptions = NavOptions.Builder().setHorizontalFullInAnim().build()
+        )
+    }
+
     private fun NavController.navigate(
         action: NavDirections,
         args: Bundle? = null,

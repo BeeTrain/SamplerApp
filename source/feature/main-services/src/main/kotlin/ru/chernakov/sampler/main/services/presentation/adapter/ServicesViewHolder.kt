@@ -7,7 +7,7 @@ import ru.chernakov.sampler.core.ui.extension.bind
 import ru.chernakov.sampler.core.ui.extension.setOnClickWithDelayListener
 import ru.chernakov.sampler.core.ui.extension.setSelectableForeground
 import ru.chernakov.sampler.main.services.R
-import ru.chernakov.sampler.main.services.presentation.model.Service
+import ru.chernakov.sampler.main.services.data.model.Service
 import ru.chernakov.sampler.widget.image.ImageView
 import ru.chernakov.sampler.widget.list.ViewHolder
 import ru.chernakov.sampler.widget.text.TextView

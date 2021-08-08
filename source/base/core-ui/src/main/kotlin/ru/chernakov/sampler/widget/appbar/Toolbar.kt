@@ -74,6 +74,7 @@ class Toolbar
         setBackgroundColor(context.getAttrColor(R.attr.colorSurface))
         setTitleTextColor(context.getAttrColor(R.attr.colorOnSurface))
         setSubtitleTextColor(context.getAttrColor(R.attr.colorOnSurface))
+        setNavigationIconTint(context.getAttrColor(R.attr.colorOnSurface))
     }
 
     private fun marginViews() {

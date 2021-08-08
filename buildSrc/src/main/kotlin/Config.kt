@@ -15,6 +15,7 @@ object Config {
         CORE(":core"),
         CORE_DATA(":core-data"),
         CORE_UI(":core-ui"),
+        ICONPACK(":iconpack"),
         LINT(":quality-lint"),
 
         SPLASH(":splash"),
@@ -25,6 +26,7 @@ object Config {
         MAIN_PROFILE(":main-profile"),
         SETTINGS(":settings"),
         SWIPER(":swiper"),
+        LOGBOOK(":logbook")
     }
 }
 

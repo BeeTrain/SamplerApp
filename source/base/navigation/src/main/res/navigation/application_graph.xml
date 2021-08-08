@@ -31,6 +31,10 @@
             android:id="@+id/actionFromMainToSwiper"
             app:destination="@+id/swiper" />
 
+        <action
+            android:id="@+id/actionFromMainToLogbook"
+            app:destination="@+id/logbook" />
+
     </fragment>
 
     <fragment
@@ -42,5 +46,10 @@
         android:id="@+id/swiper"
         android:name="ru.chernakov.sampler.swiper.presentation.SwiperFragment"
         tools:layout="fragment_swiper" />
+
+    <fragment
+        android:id="@+id/logbook"
+        android:name="ru.chernakov.sampler.logbook.presentation.LogbookFragment"
+        tools:layout="@layout/fragment_logbook" />
 
 </navigation>

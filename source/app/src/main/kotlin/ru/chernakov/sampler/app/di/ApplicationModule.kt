@@ -2,6 +2,7 @@ package ru.chernakov.sampler.app.di
 
 import org.koin.dsl.module
 import ru.chernakov.sampler.core.data.app.di.dataModule
+import ru.chernakov.sampler.logbook.app.di.logbookModule
 import ru.chernakov.sampler.main.app.di.mainModule
 import ru.chernakov.sampler.main.profile.app.di.profileModule
 import ru.chernakov.sampler.main.services.app.di.servicesModule
@@ -26,6 +27,7 @@ object ApplicationModule {
         servicesModule,
         profileModule,
         settingsModule,
-        swiperModule
+        swiperModule,
+        logbookModule,
     )
 }

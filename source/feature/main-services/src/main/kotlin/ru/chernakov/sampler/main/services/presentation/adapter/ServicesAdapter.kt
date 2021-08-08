@@ -3,7 +3,7 @@ package ru.chernakov.sampler.main.services.presentation.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import ru.chernakov.sampler.main.services.R
-import ru.chernakov.sampler.main.services.presentation.model.Service
+import ru.chernakov.sampler.main.services.data.model.Service
 import ru.chernakov.sampler.widget.list.RecyclerAdapter
 import ru.chernakov.sampler.widget.list.ViewHolder
 

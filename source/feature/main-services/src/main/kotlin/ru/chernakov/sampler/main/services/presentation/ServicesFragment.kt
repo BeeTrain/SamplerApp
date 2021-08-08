@@ -8,8 +8,8 @@ import ru.chernakov.sampler.core.ui.extension.findView
 import ru.chernakov.sampler.core.ui.extension.observeOnCreated
 import ru.chernakov.sampler.core.ui.presentation.fragment.BaseFragment
 import ru.chernakov.sampler.main.services.R
+import ru.chernakov.sampler.main.services.data.model.Service
 import ru.chernakov.sampler.main.services.presentation.adapter.ServicesAdapter
-import ru.chernakov.sampler.main.services.presentation.model.Service
 import ru.chernakov.sampler.widget.list.RecyclerView
 
 class ServicesFragment : BaseFragment(R.layout.fragment_services) {

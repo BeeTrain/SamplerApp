@@ -80,6 +80,20 @@ class FragmentFindViewDelegate<T : View>(private val id: Int) : ReadOnlyProperty
 
         @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
         fun onPause() {
+            removeObserver()
+        }
+
+        @OnLifecycleEvent(Lifecycle.Event.ON_STOP)
+        fun onStop() {
+            removeObserver()
+        }
+
+        @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
+        fun onDestroy() {
+            removeObserver()
+        }
+
+        private fun removeObserver() {
             value = null
             _lifecycle?.removeObserver(this)
             _lifecycle = null

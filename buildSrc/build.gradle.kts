@@ -19,7 +19,7 @@ repositories {
 }
 
 val kotlinVersion = "1.5.21"
-val buildToolsVersion = "7.0.0"
+val buildToolsVersion = "7.0.1"
 val navigationVersion = "2.3.5"
 val ktlintVersion = "10.1.0"
 val detektVersion = "1.17.1"

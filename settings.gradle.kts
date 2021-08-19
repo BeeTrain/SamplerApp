@@ -6,6 +6,8 @@ val moduleConfiguratorPath = "$rootDir/gradle/modules-configurator.gradle.kts"
 apply(from = File(moduleConfiguratorPath))
 
 dependencyResolutionManagement {
+
+    @Suppress("UnstableApiUsage")
     repositories {
         google()
         mavenCentral()
@@ -21,7 +23,7 @@ pluginManagement {
     resolutionStrategy {
         eachPlugin {
             val kotlinVersion = "1.5.21"
-            val androidGradleVersion = "7.0.0"
+            val androidGradleVersion = "7.0.1"
 
             val pluginId = requested.id.id
             when {

@@ -1,10 +1,16 @@
+# android studio
+.idea
 *.iml
+# gradle
 .gradle
-/local.properties
-/.idea
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-.cxx
+build/
+# local
 local.properties
+# generated files
+bin/
+gen/
+captures/
+# OSX files
+.DS_Store
+# google-services
+google-services.json

@@ -3,8 +3,8 @@ plugins {
 }
 
 dependencies {
-    implementation(project(Config.Modules.CORE_UI.path))
-    implementation(project(Config.Modules.CORE_DATA.path))
+    implementation(project(Modules.CORE_UI.path))
+    implementation(project(Modules.CORE_DATA.path))
 
     AndroidXDependencies.all(this)
     DIDependencies.all(this)

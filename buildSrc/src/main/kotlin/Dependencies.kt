@@ -1,3 +1,5 @@
+@file:Suppress("MemberVisibilityCanBePrivate")
+
 import internal.compileOnly
 import internal.implementation
 import org.gradle.api.JavaVersion
@@ -28,8 +30,8 @@ object Plugins {
 
 object KotlinDependencies {
     object Versions {
-        const val kotlinVersion = "1.5.21"
-        const val kotlinCoroutines = "1.5.0"
+        const val kotlinVersion = "1.6.10"
+        const val kotlinCoroutines = "1.6.0"
     }
 
     const val stdLib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:${Versions.kotlinVersion}"
@@ -69,12 +71,12 @@ object LintDependencies {
 
 object AndroidXDependencies {
     object Versions {
-        const val appCompat = "1.3.0"
-        const val core = "1.5.0"
-        const val material = "1.3.0"
-        const val constraintLayout = "2.0.4"
-        const val lifecycle = "2.3.1"
-        const val navigation = "2.3.5"
+        const val appCompat = "1.4.1"
+        const val core = "1.7.0"
+        const val material = "1.5.0"
+        const val constraintLayout = "2.1.3"
+        const val lifecycle = "2.4.1"
+        const val navigation = "2.4.1"
         const val recyclerView = "1.2.1"
     }
 
@@ -131,7 +133,7 @@ object DIDependencies {
 object MiscDependencies {
     object Versions {
         const val timber = "4.7.1"
-        const val lottie = "3.7.0"
+        const val lottie = "5.0.3"
     }
 
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"

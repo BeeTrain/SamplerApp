@@ -16,8 +16,9 @@ class SingleSharedFlow<T> : MutableSharedFlow<T> {
     override val subscriptionCount: StateFlow<Int>
         get() = mutableSharedFlow.subscriptionCount
 
-    @ExperimentalCoroutinesApi
     @InternalCoroutinesApi
+    @Suppress("EXPERIMENTAL_IS_NOT_ENABLED")
+    @OptIn(ExperimentalCoroutinesApi::class)
     override suspend fun collect(collector: FlowCollector<T>) {
         mutableSharedFlow.collect {
             try {

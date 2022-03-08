@@ -4,8 +4,8 @@ import BuildTypes
 import Config
 import KotlinDependencies.defaultModuleLibs
 import MiscDependencies.timber
+import Modules
 import Plugins
-import SourceSets
 import internal.libraryExtension
 import internal.lintChecks
 import internal.setupQualityTask
@@ -50,12 +50,6 @@ class AndroidModulePlugin : Plugin<Project> {
             buildTypes.getByName(BuildTypes.release) {
             }
 
-            SourceSets.values().forEach { sourceSet ->
-                sourceSets.named(sourceSet.title).configure {
-                    java.srcDirs(sourceSet.path)
-                }
-            }
-
             compileOptions {
                 sourceCompatibility = javaVersion
                 targetCompatibility = javaVersion
@@ -71,7 +65,7 @@ class AndroidModulePlugin : Plugin<Project> {
 
     private fun Project.applyDefaultDependencies() {
         dependencies.apply {
-            lintChecks(project(Config.Modules.LINT.path))
+            lintChecks(project(Modules.LINT.path))
             timber()
             defaultModuleLibs()
         }

@@ -8,7 +8,7 @@ plugins {
 }
 
 dependencies {
-    implementation(project(Config.Modules.CORE_UI.path))
+    implementation(project(Modules.CORE_UI.path))
 
     file(featureModulesDirectory).listFiles()?.forEach { featureModule ->
         if (featureModule.isDirectory && featureModule.isGradleProjectDir) {

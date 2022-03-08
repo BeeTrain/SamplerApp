@@ -38,7 +38,7 @@ internal fun Project.setupQualityTask() = apply {
     val androidExtension = extensions.findByName("android") as CommonExtension<*, *, *, *>
     androidExtension.apply {
         lint {
-            disable(
+            disable += listOf(
                 "RtlSymmetry",
                 "RtlHardcoded",
                 "InvalidPackage",

@@ -3,6 +3,6 @@ plugins {
 }
 
 dependencies {
-    implementation(project(Config.Modules.CORE.path))
+    implementation(project(Modules.CORE.path))
     DIDependencies.all(this)
 }

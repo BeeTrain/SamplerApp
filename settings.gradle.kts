@@ -1,9 +1,9 @@
 /* Project Settings */
 
-val moduleConfiguratorPath = "$rootDir/gradle/modules-configurator.gradle.kts"
+val modulesConfiguratorPath = "$rootDir/gradle/modules-configurator.gradle.kts"
 
 // Attach modules
-apply(from = File(moduleConfiguratorPath))
+apply(from = File(modulesConfiguratorPath))
 
 dependencyResolutionManagement {
 
@@ -22,8 +22,8 @@ pluginManagement {
 
     resolutionStrategy {
         eachPlugin {
-            val kotlinVersion = "1.5.21"
-            val androidGradleVersion = "7.0.1"
+            val kotlinVersion = "1.6.10"
+            val androidGradleVersion = "7.1.2"
 
             val pluginId = requested.id.id
             when {

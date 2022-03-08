@@ -6,8 +6,8 @@ import Config
 import DIDependencies
 import KotlinDependencies
 import MiscDependencies
+import Modules
 import Plugins
-import SourceSets
 import extension.featureModulesDirectory
 import extension.isGradleProjectDir
 import internal.applicationExtension
@@ -70,12 +70,6 @@ class ApplicationModulePlugin : Plugin<Project> {
                 }
             }
 
-            SourceSets.values().forEach { sourceSet ->
-                sourceSets.named(sourceSet.title).configure {
-                    java.srcDirs(sourceSet.path)
-                }
-            }
-
             compileOptions {
                 sourceCompatibility = javaVersion
                 targetCompatibility = javaVersion
@@ -86,7 +80,7 @@ class ApplicationModulePlugin : Plugin<Project> {
     private fun Project.applyDependencies() {
         dependencies.apply {
             // Custom Lint rules
-            lintChecks(project(Config.Modules.LINT.path))
+            lintChecks(project(Modules.LINT.path))
 
             // Base modules
             File(baseModulesDirectory).listFiles()?.forEach { baseModule ->

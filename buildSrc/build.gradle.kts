@@ -7,7 +7,6 @@ buildscript {
 }
 
 plugins {
-    `java-gradle-plugin`
     `kotlin-dsl`
     `kotlin-dsl-precompiled-script-plugins`
 }
@@ -18,17 +17,17 @@ repositories {
     maven("https://plugins.gradle.org/m2/")
 }
 
-val kotlinVersion = "1.5.21"
-val buildToolsVersion = "7.0.1"
+val kotlinVersion = "1.6.10"
+val androidGradlePluginVersion = "7.1.2"
 val navigationVersion = "2.3.5"
 val ktlintVersion = "10.1.0"
-val detektVersion = "1.17.1"
-val dependenciesVersion = "0.39.0"
+val detektVersion = "1.19.0"
+val dependenciesVersion = "0.42.0"
 
 dependencies {
     compileOnly(gradleApi())
 
-    implementation("com.android.tools.build:gradle:$buildToolsVersion")
+    implementation("com.android.tools.build:gradle:$androidGradlePluginVersion")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion")
     implementation("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
 

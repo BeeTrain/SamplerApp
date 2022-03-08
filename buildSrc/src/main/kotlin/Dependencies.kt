@@ -116,23 +116,21 @@ object AndroidXDependencies {
 
 object DIDependencies {
     object Versions {
-        const val koinVersion = "3.0.2"
+        const val koinVersion = "3.1.5"
     }
 
     const val core = "io.insert-koin:koin-core:${Versions.koinVersion}"
-    const val ext = "io.insert-koin:koin-core-ext:${Versions.koinVersion}"
     const val android = "io.insert-koin:koin-android:${Versions.koinVersion}"
 
     fun all(dependencies: DependencyHandler) = dependencies.apply {
         implementation(core)
-        implementation(ext)
         implementation(android)
     }
 }
 
 object MiscDependencies {
     object Versions {
-        const val timber = "4.7.1"
+        const val timber = "5.0.1"
         const val lottie = "5.0.3"
     }
 

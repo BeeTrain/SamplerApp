@@ -12,6 +12,7 @@ import ru.chernakov.sampler.core.ui.extension.findView
 import ru.chernakov.sampler.core.ui.extension.getColorExt
 import ru.chernakov.sampler.core.ui.extension.observeOnCreated
 import ru.chernakov.sampler.core.ui.extension.runFadeInAnimation
+import ru.chernakov.sampler.core.ui.extension.unsafeLazy
 import ru.chernakov.sampler.core.ui.presentation.fragment.BaseFragment
 import ru.chernakov.sampler.swiper.R
 import ru.chernakov.sampler.swiper.presentation.model.SwiperModel
@@ -40,6 +41,8 @@ class SwiperFragment : BaseFragment(R.layout.fragment_swiper) {
     private val swiperTopCardName by findView<TextView>(R.id.swiper_top_card_view_name)
     private val swiperBottomCardName by findView<TextView>(R.id.swiper_bottom_card_view_name)
 
+    private val transitionAdapter by unsafeLazy { createTransitionAdapter() }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -55,7 +58,7 @@ class SwiperFragment : BaseFragment(R.layout.fragment_swiper) {
     }
 
     private fun setupListeners() {
-        swiperMotionContainer.setTransitionListener(getTransitionAdapter())
+        swiperMotionContainer.setTransitionListener(transitionAdapter)
     }
 
     private fun bindCards(model: SwiperModel) {
@@ -80,15 +83,19 @@ class SwiperFragment : BaseFragment(R.layout.fragment_swiper) {
         swiperMotionContainer.progress = 0F
     }
 
-    private fun getTransitionAdapter() = object : TransitionAdapter() {
-        override fun onTransitionCompleted(motionLayout: MotionLayout, currentId: Int) {
-            when (currentId) {
-                R.id.offScreenPass,
-                R.id.offScreenLike -> {
-                    motionLayout.progress = 0F
-                    motionLayout.setTransition(R.id.rest, R.id.like)
-                    viewModel.swipe()
-                    swiperTopCardVideoView.isVisible = false
+    private fun createTransitionAdapter(): TransitionAdapter {
+        return object : TransitionAdapter() {
+            override fun onTransitionCompleted(motionLayout: MotionLayout, currentId: Int) {
+                val isEndState = currentId == motionLayout.endState
+                val isCorrectCurrentId = currentId == R.id.offScreenLeft || currentId == R.id.offScreenRight
+
+                when {
+                    isEndState && isCorrectCurrentId -> {
+                        motionLayout.progress = 0F
+                        motionLayout.setTransition(R.id.middle, R.id.right)
+                        viewModel.swipe()
+                        swiperTopCardVideoView.isVisible = false
+                    }
                 }
             }
         }
